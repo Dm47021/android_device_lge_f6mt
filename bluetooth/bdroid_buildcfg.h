@@ -17,12 +17,10 @@
 #ifndef _BDROID_BUILDCFG_H
 #define _BDROID_BUILDCFG_H
 
-#define BTA_DISABLE_DELAY 100 /* in milliseconds */
-
 /*
  * shows MS500 as device name 
  * DM_07/20/2014_BT-LGEF6-BCM4334
  */
-#define BTM_DEF_LOCAL_NAME        "MS500" 
+#define BTM_DEF_LOCAL_NAME        "LGMS500" 
 
 #endif

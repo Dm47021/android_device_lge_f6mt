@@ -90,7 +90,6 @@ on fs_selinux
     mount vfat /dev/block/platform/msm_sdcc.1/by-name/modem /firmware ro shortname=lower dmask=0006 fmask=0006 umask=0006,gid=1000,context=u:object_r:firmware:s0
 
 on boot 
-## DM_CHANGE CLEANUP RAMDISK ##
     exec system/bin/btnvtool -O
     chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type
@@ -109,6 +108,19 @@ on boot
     chmod 0660 /sys/devices/platform/msm_serial_hs.0/clock
     chown system audio /dev/msm_IRRC_pcm_dec
     chmod 0660 /dev/msm_IRRC_pcm_dec
+
+    chown system system /sys/class/pmic-kpjt/make_patterns/blink_patterns
+    chown system system /sys/class/pmic-kpjt/make_patterns/test_patterns
+    chown system system /sys/class/pmic-kpjt/use_patterns/setting
+
+    chown system system /sys/class/leds/led:rgb_red/brightness
+    chown system system /sys/class/leds/led:rgb_green/brightness
+    chown system system /sys/class/leds/led:rgb_blue/brightness
+
+    chown system system /sys/class/leds/led:rgb_red/device/lock
+    chown system system /sys/class/leds/led:rgb_red/device/blink
+    chown system system /sys/class/leds/led:rgb_red/device/grpfreq
+    chown system system /sys/class/leds/led:rgb_red/device/grppwm
 
     write /sys/devices/i2c-3/3-0024/cyttsp_update_fw 1
     write /sys/devices/i2c-3/3-005b/update_fw 1
@@ -645,10 +657,6 @@ service time_daemon /system/bin/time_daemon
 on property:sys.boot_completed=1
     write /sys/class/input/input5/dynamic_matrix "10157 184 -98 184 9741 -556 -98 -556 10139"
     write /sys/class/input/input5/offsets "-1 9 1 493163 -131368 1406126 3"
-
-# Disables LEDS 
-#    write /sys/class/leds/led:rgb_red/brightness "0"
-#    write /sys/class/leds/led:rgb_green/brightness "0"
 
 # bugreport is triggered by holding down volume down, volume up and power
 service bugreport /system/bin/dumpstate -d -p -B \

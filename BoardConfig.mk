@@ -21,7 +21,6 @@ COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE -DQCOM_BSP
 
 # Kernel
 BOARD_CUSTOM_BOOTIMG_MK      := device/lge/f6mt/releasetools/mkbootimg.mk
-#BOARD_KERNEL_CMDLINE         := androidboot.hardware=qcom androidboot.selinux=permissive user_debug=31 zcache
 BOARD_KERNEL_CMDLINE         := androidboot.hardware=qcom user_debug=31 zcache
 BOARD_KERNEL_BASE            := 0x80200000
 BOARD_MKBOOTIMG_ARGS         := --ramdisk_offset 0x02000000
@@ -107,6 +106,7 @@ BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/lge/f6mt/bluetooth
 BOARD_BLUEDROID_VENDOR_CONF := device/lge/f6mt/bluetooth/libbt_vndcfg.txt
+TARGET_NEEDS_BLUETOOTH_INIT_DELAY := true
 
 # GPS
 BOARD_HAVE_NEW_QC_GPS := true
