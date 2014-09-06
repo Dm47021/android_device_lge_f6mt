@@ -156,7 +156,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += Torch
 
 # Lights
-PRODUCT_PACKAGES += lights.msm8960
+PRODUCT_PACKAGES += \
+     lights.f6mt
 
 #Legacy HW -- needed for tspdrv / vibrator
 PRODUCT_PACKAGES += libhardware_legacy

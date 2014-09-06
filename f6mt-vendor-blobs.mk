@@ -568,7 +568,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/proprietary/lib/libxml.so:system/lib/libxml.so \
     $(LOCAL_PATH)/proprietary/lib/libxml2.so:system/lib/libxml2.so \
     $(LOCAL_PATH)/proprietary/lib/hw/bplus.default.so:system/lib/hw/bplus.default.so \
-    $(LOCAL_PATH)/proprietary/lib/hw/lights.msm8960.so:system/lib/hw/lights.msm8960.so \
     $(LOCAL_PATH)/proprietary/vendor/lib/libalarmservice_jni.so:system/vendor/lib/libalarmservice_jni.so \
     $(LOCAL_PATH)/proprietary/vendor/lib/lib-dplmedia.so:system/vendor/lib/lib-dplmedia.so \
     $(LOCAL_PATH)/proprietary/vendor/lib/libdrmdecrypt.so:system/vendor/lib/libdrmdecrypt.so \
@@ -652,6 +651,8 @@ PRODUCT_COPY_FILES += \
 # APNS For LTE/MMS
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/apns-conf.xml:system/etc/apns-conf.xml
+
+#    $(LOCAL_PATH)/proprietary/lib/hw/lights.msm8960.so:system/lib/hw/lights.msm8960.so \
 
 
 

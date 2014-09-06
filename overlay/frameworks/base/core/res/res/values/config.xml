@@ -136,23 +136,6 @@
         <item>30</item>
     </integer-array>
 
-    <!-- Vibrator pattern for feedback about booting with safe mode disabled -->
-    <integer-array name="config_safeModeDisabledVibePattern">
-        <item>7</item>
-        <item>10</item>
-        <item>20</item>
-        <item>24</item>
-    </integer-array>
-
-    <!-- Vibrator pattern for feedback about booting with safe mode disabled -->
-    <integer-array name="config_safeModeEnabledVibePattern">
-        <item>7</item>
-        <item>10</item>
-        <item>20</item>
-        <item>24</item>
-        <item>500</item>
-        <item>600</item>
-    </integer-array>
 
     <!-- Vibrator pattern for feedback about hitting a scroll barrier -->
     <integer-array name="config_scrollBarrierVibePattern">
