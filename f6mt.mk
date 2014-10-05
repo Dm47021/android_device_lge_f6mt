@@ -87,6 +87,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     bdAddrLoader
 
+PRODUCT_COPY_FILES += \
+	device/lge/f6mt/proprietary/etc/bluetooth/main.conf:system/etc/bluetooth/main.conf
+
 # Media
 PRODUCT_PACKAGES += \
     libdivxdrmdecrypt \
