@@ -1,0 +1,54 @@
+
+
+on post-fs-data
+
+
+#LGE_UPDATE_S 20130506 choonghyun.jeon@lge.com
+service immvibed_f6_2v /system/bin/immvibed_f6_2v
+	class main
+	user shell
+	group shell system
+	disabled
+	oneshot
+
+service immvibed_f6_3v /system/bin/immvibed_f6_3v
+	class main
+	user shell
+	group shell system
+	disabled
+	oneshot
+
+#rev_10=9 ~ rev_12=11
+on property:ro.revision=9
+	start immvibed_f6_2v
+on property:ro.revision=10
+	start immvibed_f6_2v
+on property:ro.revision=11
+	start immvibed_f6_2v
+
+#rev_a=2 ~ rev_c=4
+on property:ro.revision=2
+	start immvibed_f6_3v
+on property:ro.revision=3
+	start immvibed_f6_3v
+on property:ro.revision=4
+	start immvibed_f6_3v
+
+
+service imsqmidaemon /system/bin/imsqmidaemon
+    class main
+    user system
+    group radio net_raw log qcom_diag
+    disabled
+
+
+on boot
+    start imsqmidaemon
+
+# imsdatadaemon starts with root and UID will be downgraded to SYSTEM.
+service imsdatadaemon /system/bin/imsdatadaemon
+    class main
+    user root
+    group system wifi radio net_raw log qcom_diag net_admin
+    disabled
+

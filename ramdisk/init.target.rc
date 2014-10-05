@@ -27,6 +27,8 @@
 #
 #
 
+import init.f6_aosp.rc
+
 on early-init
     mkdir /firmware 0771 system system
     symlink /data/tombstones /tombstones
@@ -641,11 +643,11 @@ service sensord /system/bin/sensord
 # LGE_CHANGE_S [younglae.kim@lge.com] 2013-02-25, add immersion solution
 # Begin Immersion changes
 # TouchSense Player Service
-service immvibed /system/bin/immvibed
-    class late_start
-    user shell
-    group shell
-    oneshot
+#service immvibed /system/bin/immvibed
+#    class late_start
+#    user shell
+#    group shell
+#    oneshot
 # End Immersion changes
 # LGE_CHANGE_E [younglae.kim@lge.com] 2013-02-25
 
@@ -657,6 +659,13 @@ service time_daemon /system/bin/time_daemon
 on property:sys.boot_completed=1
     write /sys/class/input/input5/dynamic_matrix "10157 184 -98 184 9741 -556 -98 -556 10139"
     write /sys/class/input/input5/offsets "-1 9 1 493163 -131368 1406126 3"
+
+
+service bdAddrLoader /system/bin/bdAddrLoader -f /persist/bluetooth/.bdaddr -h -x
+    class main
+    user bluetooth
+    group system bluetooth
+    oneshot
 
 # bugreport is triggered by holding down volume down, volume up and power
 service bugreport /system/bin/dumpstate -d -p -B \

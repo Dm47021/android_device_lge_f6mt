@@ -1,5 +1,5 @@
-# Copyright (C) 2013 The Android Open Source Project
-# Copyright (C) 2013 The CyanogenMod Project
+#
+# Copyright 2013 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,13 +12,17 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+#
 
-LOCAL_PATH := $(call my-dir)
-ifeq ($(TARGET_BOARD_PLATFORM),msm8960)
+LOCAL_PATH:= $(call my-dir)
 
 include $(CLEAR_VARS)
-LOCAL_SRC_FILES := healthd_board_default.cpp
-LOCAL_MODULE := libhealthd.f6mt
-LOCAL_C_INCLUDES := system/core/healthd
-include $(BUILD_STATIC_LIBRARY)
-endif
+LOCAL_SRC_FILES := addrloader.c
+LOCAL_C_INCLUDES := \
+	$(LOCAL_PATH) \
+	$(TARGET_OUT_HEADERS)/common/inc
+LOCAL_SHARED_LIBRARIES := libcutils liblog
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_OWNER := lge
+LOCAL_MODULE := bdAddrLoader
+include $(BUILD_EXECUTABLE)

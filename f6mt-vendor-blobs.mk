@@ -12,6 +12,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ramdisk/init.qcom.usb.rc:root/init.qcom.usb.rc \
     $(LOCAL_PATH)/ramdisk/init.qcom.usb.sh:root/init.qcom.usb.sh \
     $(LOCAL_PATH)/ramdisk/init.target.rc:root/init.target.rc \
+    $(LOCAL_PATH)/ramdisk/init.f6_aosp.rc:root/init.f6_aosp.rc \
     $(LOCAL_PATH)/ramdisk/lpm.rc:root/lpm.rc \
     $(LOCAL_PATH)/ramdisk/ueventd.qcom.rc:root/ueventd.qcom.rc \
     $(LOCAL_PATH)/ramdisk/res/images/charger/battery_0.png:root/res/images/charger/battery_0.png \
@@ -205,8 +206,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/proprietary/lib/libloc_eng.so:system/lib/libloc_eng.so \
     $(LOCAL_PATH)/proprietary/lib/hw/gps.default.so:system/lib/hw/gps.default.so \
 
-# FM
-#PRODUCT_COPY_FILES += \
+# Lights
+PRODUCT_COPY_FILES += \
+        $(LOCAL_PATH)/proprietary/lib/hw/lights.msm8960.so:system/lib/hw/lights.msm8960.so \
 
 #NFC
 PRODUCT_COPY_FILES += \
@@ -301,7 +303,8 @@ PRODUCT_COPY_FILES += \
 
 #TouchSense Player Service
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/proprietary/bin/immvibed:system/bin/immvibed \
+    $(LOCAL_PATH)/proprietary/bin/immvibed_f6_2v:system/bin/immvibed_f6_2v \
+    $(LOCAL_PATH)/proprietary/bin/immvibed_f6_3v:system/bin/immvibed_f6_3v \
     $(LOCAL_PATH)/proprietary/lib/libImmVibeJ.so:system/lib/libImmVibeJ.so \
 
 # UNSORTED MAY NOT NEED
@@ -310,7 +313,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/proprietary/bin/aplay_lb:system/bin/aplay_lb \
     $(LOCAL_PATH)/proprietary/bin/atd:system/bin/atd \
     $(LOCAL_PATH)/proprietary/bin/ATFWD-daemon:system/bin/ATFWD-daemon \
-    $(LOCAL_PATH)/proprietary/bin/bdaddr_loader:system/bin/bdaddr_loader \
     $(LOCAL_PATH)/proprietary/bin/bnrd:system/bin/bnrd \
     $(LOCAL_PATH)/proprietary/bin/bridgemgrd:system/bin/bridgemgrd \
     $(LOCAL_PATH)/proprietary/bin/cnd:system/bin/cnd \
@@ -606,53 +608,15 @@ PRODUCT_COPY_FILES += \
 
 # UNSORTED FROM JB ROM MAY OR MAY NOT NEED
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/proprietary/bin/cp:system/bin/cp \
-    $(LOCAL_PATH)/proprietary/bin/dbus-daemon:system/bin/dbus-daemon \
     $(LOCAL_PATH)/proprietary/bin/diag_dci_client:system/bin/diag_dci_client \
     $(LOCAL_PATH)/proprietary/bin/location-mq:system/bin/location-mq \
-    $(LOCAL_PATH)/proprietary/bin/mcDriverDaemonQC:system/bin/mcDriverDaemonQC \
-    $(LOCAL_PATH)/proprietary/bin/mm-adec-omxaac-test:system/bin/mm-adec-omxaac-test \
-    $(LOCAL_PATH)/proprietary/bin/mm-aenc-omxaac-test:system/bin/mm-aenc-omxaac-test \
-    $(LOCAL_PATH)/proprietary/bin/mm-aenc-omxamr-test:system/bin/mm-aenc-omxamr-test \
-    $(LOCAL_PATH)/proprietary/bin/mm-aenc-omxevrc-test:system/bin/mm-aenc-omxevrc-test \
-    $(LOCAL_PATH)/proprietary/bin/mm-aenc-omxqcelp13-test:system/bin/mm-aenc-omxqcelp13-test \
-    $(LOCAL_PATH)/proprietary/bin/mm-gs-camctrl-test:system/bin/mm-gs-camctrl-test \
-    $(LOCAL_PATH)/proprietary/bin/mtsd_file_manager:system/bin/mtsd_file_manager \
-    $(LOCAL_PATH)/proprietary/bin/mtsd_kmsg:system/bin/mtsd_kmsg \
-    $(LOCAL_PATH)/proprietary/bin/mtsd_logcat_events:system/bin/mtsd_logcat_events \
-    $(LOCAL_PATH)/proprietary/bin/mtsd_logcat_filter:system/bin/mtsd_logcat_filter \
-    $(LOCAL_PATH)/proprietary/bin/mtsd_logcat_main:system/bin/mtsd_logcat_main \
-    $(LOCAL_PATH)/proprietary/bin/mtsd_logcat_radio:system/bin/mtsd_logcat_radio \
-    $(LOCAL_PATH)/proprietary/bin/mtsd_logcat_system:system/bin/mtsd_logcat_system \
-    $(LOCAL_PATH)/proprietary/bin/mtsd_miniOS:system/bin/mtsd_miniOS \
-    $(LOCAL_PATH)/proprietary/bin/mtsd_miniOS_fm:system/bin/mtsd_miniOS_fm \
     $(LOCAL_PATH)/proprietary/bin/pand:system/bin/pand \
     $(LOCAL_PATH)/proprietary/bin/qosmgr:system/bin/qosmgr \
-    $(LOCAL_PATH)/proprietary/bin/system_server:system/bin/system_server \
-    $(LOCAL_PATH)/proprietary/bin/tlcWrapperApp:system/bin/tlcWrapperApp \
-    $(LOCAL_PATH)/proprietary/bin/xtwifi-client:system/bin/xtwifi-client \
-    $(LOCAL_PATH)/proprietary/bin/xtwifi-inet-agent:system/bin/xtwifi-inet-agent \
-    $(LOCAL_PATH)/proprietary/etc/dbus.conf:system/etc/dbus.conf \
-    $(LOCAL_PATH)/proprietary/etc/efs.txt:system/etc/efs.txt \
-    $(LOCAL_PATH)/proprietary/etc/thermald-8930-empty.conf:system/etc/thermald-8930-empty.conf \
-    $(LOCAL_PATH)/proprietary/etc/xtra_root_cert.pem:system/etc/xtra_root_cert.pem \
-    $(LOCAL_PATH)/proprietary/etc/xtwifi.conf:system/etc/xtwifi.conf \
-    $(LOCAL_PATH)/proprietary/lib/libxt_v02.so:system/lib/libxt_v02.so \
-    $(LOCAL_PATH)/proprietary/lib/libxtwifi_ulp_adaptor.so:system/lib/libxtwifi_ulp_adaptor.so \
-    $(LOCAL_PATH)/proprietary/lib/libxtwifi_zpp_adaptor.so:system/lib/libxtwifi_zpp_adaptor.so \
-    $(LOCAL_PATH)/proprietary/lib/hw/gestures.msm8960.so:system/lib/hw/gestures.msm8960.so \
-    $(LOCAL_PATH)/proprietary/lib/libgesture-core.so:system/lib/libgesture-core.so \
-    $(LOCAL_PATH)/proprietary/lib/libgesture_client.so:system/lib/libgesture_client.so \
-    $(LOCAL_PATH)/proprietary/lib/libgestureservice.so:system/lib/libgestureservice.so \
-    $(LOCAL_PATH)/proprietary/lib/libmmgestures-linux.so:system/lib/libmmgestures-linux.so \
-    $(LOCAL_PATH)/proprietary/lib/libmmgesture_services.so:system/lib/libmmgesture_services.so \
     $(LOCAL_PATH)/proprietary/lib/libnetcmdiface.so:system/lib/libnetcmdiface.so \
 
 # APNS For LTE/MMS
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/apns-conf.xml:system/etc/apns-conf.xml
-
-#    $(LOCAL_PATH)/proprietary/lib/hw/lights.msm8960.so:system/lib/hw/lights.msm8960.so \
 
 
 

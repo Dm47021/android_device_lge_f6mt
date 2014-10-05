@@ -1,4 +1,8 @@
 
+# f6mt HAL libraries
+BOARD_HAL_STATIC_LIBRARIES := \
+    libhealthd.f6mt
+
 # Inherit from the proprietary version
 -include vendor/lge/f6mt/BoardConfigVendor.mk
 
@@ -124,6 +128,7 @@ BOARD_USES_QC_TIME_SERVICES := true
 
 # PowerHAL
 TARGET_USES_CM_POWERHAL := true
+CM_POWERHAL_EXTENSION := f6mt
 
 # Charger
 BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/power_supply/battery/batt_lp_charging

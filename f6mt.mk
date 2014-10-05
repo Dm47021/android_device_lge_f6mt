@@ -83,6 +83,10 @@ PRODUCT_PACKAGES += \
     audio.r_submix.default \
     libaudio-resampler
 
+# bdAddrloader
+PRODUCT_PACKAGES += \
+    bdAddrLoader
+
 # Media
 PRODUCT_PACKAGES += \
     libdivxdrmdecrypt \
@@ -247,9 +251,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Network
 PRODUCT_PROPERTY_OVERRIDES += \
-ro.build.target_operator=TMO \
-ro.build.target_operator_ext=MPCS_TMO \
-ro.telephony.default_network=9
+    ro.build.target_operator=TMO \
+    ro.build.target_operator_ext=MPCS_TMO \
+    ro.telephony.default_network=9
+
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    persist.radio.use_cc_names=true
 
 # For userdebug builds
 ADDITIONAL_DEFAULT_PROPERTIES += \
