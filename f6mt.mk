@@ -83,12 +83,29 @@ PRODUCT_PACKAGES += \
     audio.r_submix.default \
     libaudio-resampler
 
+# Audio Properties
+PRODUCT_PROPERTY_OVERRIDES += \
+	persist.audio.fluence.mode=endfire \
+        persist.audio.fluence.speaker=none \
+        persist.audio.vr.enable=false \
+        persist.audio.handset.mic=digital \
+        persist.audio.lowlatency.rec=false \
+        af.resampler.quality=255
+
+
 # bdAddrloader
 PRODUCT_PACKAGES += \
     bdAddrLoader
 
 PRODUCT_COPY_FILES += \
 	device/lge/f6mt/proprietary/etc/bluetooth/main.conf:system/etc/bluetooth/main.conf
+
+# Bluetooth Properties
+PRODUCT_PROPERTY_OVERRIDES += \
+        ro.bluetooth.request.master=true \
+        ro.bluetooth.remote.autoconnect=true \
+        bluetooth.chip.vendor=brcm 
+
 
 # Media
 PRODUCT_PACKAGES += \
@@ -129,10 +146,6 @@ PRODUCT_PACKAGES += \
     FM2 \
     FMRecord
 
-# IR Hal "ConsumerIR"
-#PRODUCT_PACKAGES += \
-#    consumerir.default
-
 # NFC Support
 PRODUCT_PACKAGES += \
     libnfc \
@@ -150,8 +163,6 @@ endif
 PRODUCT_COPY_FILES += \
     $(NFCEE_ACCESS_PATH):system/etc/nfcee_access.xml
 
-
-
 # CRDA
 PRODUCT_PACKAGES += \
     crda \
@@ -162,12 +173,13 @@ PRODUCT_PACKAGES += \
 # Torch
 PRODUCT_PACKAGES += Torch
 
-# Lights
-PRODUCT_PACKAGES += \
-     lights.f6mt
-
 #Legacy HW -- needed for tspdrv / vibrator
 PRODUCT_PACKAGES += libhardware_legacy
+
+# tspdrv Properties
+PRODUCT_PROPERTY_OVERRIDES += \
+       ro.config.vibrate_type=2 \
+       ime_vibration_pattern=0:20
 
 # QRNGD
 PRODUCT_PACKAGES += qrngd
@@ -215,11 +227,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.ril.transmitpower=true \
     ro.warmboot.capability=1 \
     ro.qualcomm.cabl=0 \
-    ro.opengles.version=131072 \
-    af.resampler.quality=4 \
-    persist.audio.fluence.mode=endfire \
-    persist.audio.vr.enable=false \
-    persist.audio.handset.mic=digital \
+    ro.opengles.version=196608 \
     ro.use_data_netmgrd=true \
     lpa.decode=true \
     lpa.use-stagefright=true \
@@ -248,6 +256,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.hw=1 \
     debug.egl.hw=1 \
     persist.hwc.mdpcomp.enable=true \
+    debug.composition.type=gpu \
     debug.mdpcomp.logs=0 \
     ro.telephony.ril_class=SamsungQualcommRIL \
     ro.telephony.call_ring.multiple=0
