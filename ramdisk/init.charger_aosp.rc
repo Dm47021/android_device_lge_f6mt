@@ -1,0 +1,38 @@
+
+
+on post-fs-data
+
+
+#Battery Fake mode
+	chown system system /sys/devices/platform/msm_ssbi.0/pm8038-core/pm8921-charger/power_supply/battery/pseudo_batt
+	chmod 0660 /sys/devices/platform/msm_ssbi.0/pm8038-core/pm8921-charger/power_supply/battery/pseudo_batt
+
+# LGE_CHANGE_S [yongk.kim@lge.com] 2012-10-20, Activate chargerlogo - merged from l9ii JB
+on chargerlogo_adbd
+    write /sys/class/android_usb/android0/enable 0
+    write /sys/class/android_usb/android0/idVendor 1004
+    write /sys/class/android_usb/android0/idProduct 61FA
+    write /sys/class/android_usb/android0/bDeviceClass 239
+    write /sys/class/android-usb/android0/bDeviceSubClass 2
+    write /sys/class/android-usb/android0/bDeviceProtocol 1
+    write /sys/class/android_usb/android0/f_acm/acm_transports tty
+    write /sys/class/android_usb/android0/f_diag/clients diag
+    write /sys/class/android_usb/android0/functions acm,diag,mass_storage,adb
+    write /sys/class/android_usb/android0/iSerial $ro.serialno
+    write /sys/class/android_usb/android0/enable 1
+    start adbd
+
+on chargerlogo
+   stop bootlogo
+   write /sys/module/rpm_resources/enable_low_power/L2_cache 1
+   write /sys/module/rpm_resources/enable_low_power/pxo 1
+   write /sys/module/rpm_resources/enable_low_power/vdd_dig 1
+   write /sys/module/rpm_resources/enable_low_power/vdd_mem 1
+   write /sys/module/pm_8x60/modes/cpu0/power_collapse/suspend_enabled 1
+   write /sys/module/pm_8x60/modes/cpu1/power_collapse/suspend_enabled 1
+   write /sys/module/pm_8x60/modes/cpu0/power_collapse/idle_enabled 1
+   exec /sbin/chargerlogo
+# LGE_CHANGE_E [yongk.kim@lge.com] 2012-10-20, Activate chargerlogo - mergerd from l9ii JB
+
+
+

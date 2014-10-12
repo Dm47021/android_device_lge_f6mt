@@ -13,6 +13,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ramdisk/init.qcom.usb.sh:root/init.qcom.usb.sh \
     $(LOCAL_PATH)/ramdisk/init.target.rc:root/init.target.rc \
     $(LOCAL_PATH)/ramdisk/init.f6_aosp.rc:root/init.f6_aosp.rc \
+    $(LOCAL_PATH)/ramdisk/init.charger_aosp.rc:root/init.charger_aosp.rc \
+    $(LOCAL_PATH)/ramdisk/sbin/chargerlogo:root/sbin/chargerlogo \
+    $(LOCAL_PATH)/ramdisk/sbin/healthd:root/sbin/healthd \
+    $(LOCAL_PATH)/ramdisk/charger:root/charger \
+    $(LOCAL_PATH)/ramdisk/chargerlogo_res_images-timestamp:root/chargerlogo_res_images-timestamp \
     $(LOCAL_PATH)/ramdisk/lpm.rc:root/lpm.rc \
     $(LOCAL_PATH)/ramdisk/ueventd.qcom.rc:root/ueventd.qcom.rc \
     $(LOCAL_PATH)/ramdisk/res/images/charger/battery_0.png:root/res/images/charger/battery_0.png \
