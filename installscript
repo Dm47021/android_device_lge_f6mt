@@ -1,7 +1,7 @@
 show_progress(0.500000, 0);
 ui_print("::::::::::::::::::::::::::::::::");
 ui_print("::                            ::");
-ui_print("::       AOKP                 ::");
+ui_print("::       PACMAN               ::");
 ui_print("::       For LG Optimus F6    ::");
 ui_print("::          Metro PCS         ::");
 ui_print("::                            ::");

@@ -17,6 +17,7 @@ TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_SMP := true
+COMMON_GLOBAL_CFLAGS += -D__ARM_USE_PLD -D__ARM_CACHE_LINE_SIZE=64
 TARGET_GLOBAL_CFLAGS += -mfpu=neon-vfpv4 -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mfpu=neon-vfpv4 -mfloat-abi=softfp
 BOARD_USES_QCOM_HARDWARE := true
@@ -110,7 +111,6 @@ BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/lge/f6mt/bluetooth
 BOARD_BLUEDROID_VENDOR_CONF := device/lge/f6mt/bluetooth/libbt_vndcfg.txt
-TARGET_NEEDS_BLUETOOTH_INIT_DELAY := true
 
 # GPS
 BOARD_HAVE_NEW_QC_GPS := true
@@ -157,7 +157,7 @@ BOARD_HAS_VIBRATOR_IMPLEMENTATION := ../../device/lge/f6mt/vibrator/tspdrv.c
 WEBRTC_BUILD_NEON_LIBS := true
 
 BOARD_SEPOLICY_DIRS := \
-       device/lge/mako/sepolicy
+       device/lge/f6mt/sepolicy
 
 BOARD_SEPOLICY_UNION := \
        app.te \
