@@ -2554,7 +2554,7 @@ SectionDevice
 		'MICBIAS1 CAPLESS Switch':1:1
 		'RX3 Digital Volume':1:68
 		'RX4 Digital Volume':1:68
-		'RX5 Digital Volume':1:68
+		'RX5 Digital Volume':1:80
 		'RX6 Digital Volume':1:68
 	EndSequence
 
