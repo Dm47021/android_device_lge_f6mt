@@ -19,7 +19,7 @@ include $(CLEAR_VARS)
 
 ifeq ($(TARGET_PROVIDES_LIBLIGHT),true)
 
-LOCAL_SRC_FILES := lights.c
+LOCAL_SRC_FILES := lights-f6.c
 LOCAL_MODULE_PATH := $(TARGET_OUT_SHARED_LIBRARIES)/hw
 LOCAL_SHARED_LIBRARIES := liblog \
 	libcutils
