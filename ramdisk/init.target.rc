@@ -657,8 +657,8 @@ service time_daemon /system/bin/time_daemon
 on property:sys.boot_completed=1
     write /sys/class/input/input5/dynamic_matrix "10157 184 -98 184 9741 -556 -98 -556 10139"
     write /sys/class/input/input5/offsets "-1 9 1 493163 -131368 1406126 3"
-   # write /sys/class/leds/led:rgb_red/brightness "0"
-   # write /sys/class/leds/led:rgb_green/brightness "0"
+    write /sys/class/leds/led:rgb_red/brightness "0"
+    write /sys/class/leds/led:rgb_green/brightness "0"
 
 
 service bdAddrLoader /system/bin/bdAddrLoader -f /persist/bluetooth/.bdaddr -h -x

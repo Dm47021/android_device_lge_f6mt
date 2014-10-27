@@ -75,9 +75,7 @@ TARGET_USES_ION := true
 BOARD_EGL_CFG := device/lge/f6mt/proprietary/lib/egl/egl.cfg
 
 # Lights
-# internal flag on DM Tree only
-# To build lights from source  (WIP)
-BUILD_LIBLIGHTS_SOURCE := true
+TARGET_PROVIDES_LIBLIGHT := true
 
 # Audio
 TARGET_QCOM_AUDIO_VARIANT := caf

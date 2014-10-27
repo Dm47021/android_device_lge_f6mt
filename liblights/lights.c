@@ -273,7 +273,6 @@ set_speaker_light_locked(struct light_device_t* dev,
         }
         write_int(RED_BLINK_FILE, blink);
     } else {
-        write_int(AMBER_BLINK_FILE, blink);
     }
 
     return 0;

@@ -147,14 +147,8 @@ PRODUCT_PACKAGES += \
     FMRecord
 
 #Lights
-ifeq ($(BUILD_LIBLIGHTS_SOURCE),true)
 PRODUCT_PACKAGES += \
     lights.f6mt
-
-else
-PRODUCT_COPY_FILES += \
-        $(LOCAL_PATH)/proprietary/lib/hw/lights.msm8960.so:system/lib/hw/lights.msm8960.so 
-endif
 
 # NFC Support
 PRODUCT_PACKAGES += \
