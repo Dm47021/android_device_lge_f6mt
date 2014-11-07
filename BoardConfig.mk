@@ -43,6 +43,12 @@ TARGET_KRAIT_BIONIC_PLDTHRESH := 10
 TARGET_KRAIT_BIONIC_BBTHRESH := 64
 TARGET_KRAIT_BIONIC_PLDSIZE := 64
 
+# MPDECISION
+TARGET_MPDECISION_BOOST_SOCKET := /dev/socket/mpdecision/touchboost
+
+# Hardware tunables framework
+BOARD_HARDWARE_CLASS := device/lge/f6mt/cmhw/
+
 # Recovery
 BOARD_USES_MMCUTILS := true
 BOARD_HAS_NO_MISC_PARTITION := true
@@ -66,7 +72,6 @@ TARGET_QCOM_DISPLAY_VARIANT := caf
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno305
 USE_OPENGL_RENDERER := true
 BOARD_USES_HWCOMPOSER := true
-TARGET_DISPLAY_USE_RETIRE_FENCE := true
 
 VSYNC_EVENT_PHASE_OFFSET_NS := 7500000
 SF_VSYNC_EVENT_PHASE_OFFSET_NS := 5000000
@@ -142,9 +147,6 @@ BOARD_CHARGER_RES := device/lge/f6mt/ramdisk/res/images/charger
 # Vold
 BOARD_VOLD_MAX_PARTITIONS := 24
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
-
-# Workaround to avoid issues with legacy liblights on QCOM platforms
-TARGET_PROVIDES_LIBLIGHT := true
 
 # Releasetools
 TARGET_PROVIDES_RELEASETOOLS := true
