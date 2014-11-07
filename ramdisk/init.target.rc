@@ -27,8 +27,6 @@
 #
 #
 
-import init.f6_aosp.rc
-
 on early-init
     mkdir /firmware 0771 system system
     symlink /data/tombstones /tombstones
@@ -467,7 +465,46 @@ chown system system /persist-lg
 
     setprop vold.post_fs_data_done 1
 
-   #Widevine
+# immvibed_DM47021
+service immvibed_f6_2v /system/bin/immvibed_f6_2v
+	class main
+	user shell
+	group shell system
+	disabled
+	oneshot
+
+service immvibed_f6_3v /system/bin/immvibed_f6_3v
+	class main
+	user shell
+	group shell system
+	disabled
+	oneshot
+
+#rev_10=9 ~ rev_12=11
+on property:ro.revision=9
+	start immvibed_f6_2v
+on property:ro.revision=10
+	start immvibed_f6_2v
+on property:ro.revision=11
+	start immvibed_f6_2v
+
+#rev_a=2 ~ rev_c=4
+on property:ro.revision=2
+	start immvibed_f6_3v
+on property:ro.revision=3
+	start immvibed_f6_3v
+on property:ro.revision=4
+	start immvibed_f6_3v
+
+# LG animated logo
+service bootlogo /sbin/bootlogo.f6
+        class main
+        user root
+        group root
+        disabled
+        oneshot
+
+# Widevine
     mkdir /persist-lg/widevine 0770 system system
     chown system system /persist-lg/widevine
     chmod 0770 /persist-lg/widevine
