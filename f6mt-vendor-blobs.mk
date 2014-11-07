@@ -71,7 +71,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ramdisk/bootlogo.f6_res_images-timestamp:root/bootlogo.f6_res_images-timestamp \
     $(LOCAL_PATH)/ramdisk/sbin/rr1.sh:root/sbin/rr1.sh \
     $(LOCAL_PATH)/ramdisk/sbin/recovery:root/sbin/recovery \
-    $(LOCAL_PATH)/ramdisk/boot2recovery.rc:root/boot2recovery.rc \
+    $(LOCAL_PATH)/ramdisk/init.boot2recovery.rc:root:init.boot2recovery.rc \
 
 
 # Recovery
