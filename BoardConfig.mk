@@ -25,14 +25,12 @@ TARGET_USES_QCOM_BSP := true
 COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE -DQCOM_BSP
 
 # Kernel
-BOARD_CUSTOM_BOOTIMG_MK      := device/lge/f6mt/releasetools/mkbootimg.mk
-BOARD_KERNEL_CMDLINE         := androidboot.hardware=qcom user_debug=31 zcache
+BOARD_KERNEL_CMDLINE         := androidboot.hardware=qcom user_debug=31
 BOARD_KERNEL_BASE            := 0x80200000
 BOARD_MKBOOTIMG_ARGS         := --ramdisk_offset 0x02000000
 BOARD_KERNEL_PAGESIZE        := 2048
 TARGET_KERNEL_SOURCE         := kernel/lge/f6mt
 TARGET_KERNEL_CONFIG         := cm_f6mt_defconfig
-TARGET_KERNEL_SELINUX_CONFIG := selinux_defconfig
 TARGET_SPECIFIC_HEADER_PATH := device/lge/f6mt/include
 TARGET_NO_INITLOGO := true
 
