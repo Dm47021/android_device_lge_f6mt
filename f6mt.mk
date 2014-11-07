@@ -146,10 +146,6 @@ PRODUCT_PACKAGES += \
     FM2 \
     FMRecord
 
-#Lights
-PRODUCT_PACKAGES += \
-    lights.f6mt
-
 # NFC Support
 PRODUCT_PACKAGES += \
     libnfc \

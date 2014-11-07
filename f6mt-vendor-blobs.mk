@@ -344,14 +344,15 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/proprietary/bin/qmiproxy:system/bin/qmiproxy \
 
-#APN
-#PRODUCT_COPY_FILES += \
-
 #TouchSense Player Service
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/proprietary/bin/immvibed_f6_2v:system/bin/immvibed_f6_2v \
     $(LOCAL_PATH)/proprietary/bin/immvibed_f6_3v:system/bin/immvibed_f6_3v \
     $(LOCAL_PATH)/proprietary/lib/libImmVibeJ.so:system/lib/libImmVibeJ.so \
+
+# Lights
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/proprietary/lib/hw/lights.msm8960.so:system/lib/hw/lights.msm8960.so \
 
 # UNSORTED MAY NOT NEED
 PRODUCT_COPY_FILES += \
