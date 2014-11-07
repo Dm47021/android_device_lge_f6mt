@@ -12,8 +12,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ramdisk/init.qcom.usb.rc:root/init.qcom.usb.rc \
     $(LOCAL_PATH)/ramdisk/init.qcom.usb.sh:root/init.qcom.usb.sh \
     $(LOCAL_PATH)/ramdisk/init.target.rc:root/init.target.rc \
-    $(LOCAL_PATH)/ramdisk/init.f6_aosp.rc:root/init.f6_aosp.rc \
-    $(LOCAL_PATH)/ramdisk/init.charger_aosp.rc:root/init.charger_aosp.rc \
     $(LOCAL_PATH)/ramdisk/sbin/chargerlogo:root/sbin/chargerlogo \
     $(LOCAL_PATH)/ramdisk/sbin/healthd:root/sbin/healthd \
     $(LOCAL_PATH)/ramdisk/charger:root/charger \
@@ -70,7 +68,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00037.rle:root/bootimages/boot_logof6_00037.rle \
     $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00038.rle:root/bootimages/boot_logof6_00038.rle \
     $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00039.rle:root/bootimages/boot_logof6_00039.rle \
-    $(LOCAL_PATH)/ramdisk/bootlogo.f6_res_images-timestamp:root/bootlogo.f6_res_images-timestamp
+    $(LOCAL_PATH)/ramdisk/bootlogo.f6_res_images-timestamp:root/bootlogo.f6_res_images-timestamp \
+    $(LOCAL_PATH)/ramdisk/sbin/rr1.sh:root/sbin/rr1.sh \
+    $(LOCAL_PATH)/ramdisk/sbin/recovery:root/sbin/recovery \
+    $(LOCAL_PATH)/ramdisk/boot2recovery.rc:root/boot2recovery.rc \
 
 
 # Recovery

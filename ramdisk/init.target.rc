@@ -27,6 +27,8 @@
 #
 #
 
+import init.boot2recovery.rc
+
 on early-init
     mkdir /firmware 0771 system system
     symlink /data/tombstones /tombstones
@@ -679,17 +681,6 @@ service sensord /system/bin/sensord
     user root
     oneshot
 
-# LGE_CHANGE_S [younglae.kim@lge.com] 2013-02-25, add immersion solution
-# Begin Immersion changes
-# TouchSense Player Service
-#service immvibed /system/bin/immvibed
-#    class late_start
-#    user shell
-#    group shell
-#    oneshot
-# End Immersion changes
-# LGE_CHANGE_E [younglae.kim@lge.com] 2013-02-25
-
 service time_daemon /system/bin/time_daemon
    class late_start
    user root
@@ -700,7 +691,6 @@ on property:sys.boot_completed=1
     write /sys/class/input/input5/offsets "-1 9 1 493163 -131368 1406126 3"
     write /sys/class/leds/led:rgb_red/brightness "0"
     write /sys/class/leds/led:rgb_green/brightness "0"
-
 
 service bdAddrLoader /system/bin/bdAddrLoader -f /persist/bluetooth/.bdaddr -h -x
     class main
