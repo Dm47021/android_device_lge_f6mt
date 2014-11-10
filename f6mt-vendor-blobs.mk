@@ -12,6 +12,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ramdisk/init.qcom.usb.rc:root/init.qcom.usb.rc \
     $(LOCAL_PATH)/ramdisk/init.qcom.usb.sh:root/init.qcom.usb.sh \
     $(LOCAL_PATH)/ramdisk/init.target.rc:root/init.target.rc \
+    $(LOCAL_PATH)/ramdisk/init.f6_aosp.rc:root/init.f6_aosp.rc \
+    $(LOCAL_PATH)/ramdisk/init.charger_aosp.rc:root/init.charger_aosp.rc \
     $(LOCAL_PATH)/ramdisk/sbin/chargerlogo:root/sbin/chargerlogo \
     $(LOCAL_PATH)/ramdisk/sbin/healthd:root/sbin/healthd \
     $(LOCAL_PATH)/ramdisk/charger:root/charger \
@@ -26,53 +28,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ramdisk/res/images/charger/battery_5.png:root/res/images/charger/battery_5.png \
     $(LOCAL_PATH)/ramdisk/res/images/charger/battery_charge.png:root/res/images/charger/battery_charge.png \
     $(LOCAL_PATH)/ramdisk/res/images/charger/battery_fail.png:root/res/images/charger/battery_fail.png \
-    $(LOCAL_PATH)/ramdisk/initlogo.rle:root/initlogo.rle \
-    $(LOCAL_PATH)/ramdisk/sbin/bootlogo.f6:root/sbin/bootlogo.f6 \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00000.rle:root/bootimages/boot_logof6_00000.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00001.rle:root/bootimages/boot_logof6_00001.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00002.rle:root/bootimages/boot_logof6_00002.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00003.rle:root/bootimages/boot_logof6_00003.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00004.rle:root/bootimages/boot_logof6_00004.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00005.rle:root/bootimages/boot_logof6_00005.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00006.rle:root/bootimages/boot_logof6_00006.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00007.rle:root/bootimages/boot_logof6_00007.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00008.rle:root/bootimages/boot_logof6_00008.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00009.rle:root/bootimages/boot_logof6_00009.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00010.rle:root/bootimages/boot_logof6_00010.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00011.rle:root/bootimages/boot_logof6_00011.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00012.rle:root/bootimages/boot_logof6_00012.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00013.rle:root/bootimages/boot_logof6_00013.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00014.rle:root/bootimages/boot_logof6_00014.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00015.rle:root/bootimages/boot_logof6_00015.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00016.rle:root/bootimages/boot_logof6_00016.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00017.rle:root/bootimages/boot_logof6_00017.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00018.rle:root/bootimages/boot_logof6_00018.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00019.rle:root/bootimages/boot_logof6_00019.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00020.rle:root/bootimages/boot_logof6_00020.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00021.rle:root/bootimages/boot_logof6_00021.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00022.rle:root/bootimages/boot_logof6_00022.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00023.rle:root/bootimages/boot_logof6_00023.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00024.rle:root/bootimages/boot_logof6_00024.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00025.rle:root/bootimages/boot_logof6_00025.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00026.rle:root/bootimages/boot_logof6_00026.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00027.rle:root/bootimages/boot_logof6_00027.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00028.rle:root/bootimages/boot_logof6_00028.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00029.rle:root/bootimages/boot_logof6_00029.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00030.rle:root/bootimages/boot_logof6_00030.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00031.rle:root/bootimages/boot_logof6_00031.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00032.rle:root/bootimages/boot_logof6_00032.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00033.rle:root/bootimages/boot_logof6_00033.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00034.rle:root/bootimages/boot_logof6_00034.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00035.rle:root/bootimages/boot_logof6_00035.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00036.rle:root/bootimages/boot_logof6_00036.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00037.rle:root/bootimages/boot_logof6_00037.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00038.rle:root/bootimages/boot_logof6_00038.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00039.rle:root/bootimages/boot_logof6_00039.rle \
-    $(LOCAL_PATH)/ramdisk/bootlogo.f6_res_images-timestamp:root/bootlogo.f6_res_images-timestamp \
-    $(LOCAL_PATH)/ramdisk/sbin/rr1.sh:root/sbin/rr1.sh \
-    $(LOCAL_PATH)/ramdisk/sbin/recovery:root/sbin/recovery \
-    $(LOCAL_PATH)/ramdisk/init.boot2recovery.rc:root:init.boot2recovery.rc \
-
 
 # Recovery
 PRODUCT_COPY_FILES += \
@@ -99,12 +54,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/proprietary/vendor/lib/libC2D2.so:system/vendor/lib/libC2D2.so \
     $(LOCAL_PATH)/proprietary/vendor/lib/libCB.so:system/vendor/lib/libCB.so \
     $(LOCAL_PATH)/proprietary/vendor/lib/libgsl.so:system/vendor/lib/libgsl.so \
-    $(LOCAL_PATH)/proprietary/vendor/lib/libc2d2_a3xx.so:system/vendor/lib/libc2d2_a3xx.so \
-    $(LOCAL_PATH)/proprietary/vendor/lib/libc2d2_z180.so:system/vendor/lib/libc2d2_z180.so \
     $(LOCAL_PATH)/proprietary/vendor/lib/libllvm-a3xx.so:system/vendor/lib/libllvm-a3xx.so \
     $(LOCAL_PATH)/proprietary/vendor/lib/libOpenCL.so:system/vendor/lib/libOpenCL.so \
     $(LOCAL_PATH)/proprietary/vendor/lib/libOpenVG.so:system/vendor/lib/libOpenVG.so \
-    $(LOCAL_PATH)/proprietary/vendor/lib/libsc-a2xx.so:system/vendor/lib/libsc-a2xx.so \
     $(LOCAL_PATH)/proprietary/vendor/lib/libsc-a3xx.so:system/vendor/lib/libsc-a3xx.so \
     $(LOCAL_PATH)/proprietary/lib/libI420colorconvert.so:system/lib/libI420colorconvert.so \
     $(LOCAL_PATH)/proprietary/lib/libmm-color-convertor.so:system/lib/libmm-color-convertor.so \
@@ -119,7 +71,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/proprietary/etc/snd_soc_msm/snd_soc_msm_Sitar:system/etc/snd_soc_msm/snd_soc_msm_Sitar \
     $(LOCAL_PATH)/proprietary/etc/snd_soc_msm/snd_soc_msm_Taiko:system/etc/snd_soc_msm/snd_soc_msm_Taiko \
     $(LOCAL_PATH)/proprietary/lib/libacdbloader.so:system/lib/libacdbloader.so \
-    $(LOCAL_PATH)/proprietary/lib/libaudcal.so:system/lib/libaudioalsa.so \
     $(LOCAL_PATH)/proprietary/lib/libaudcal.so:system/lib/libaudcal.so \
     $(LOCAL_PATH)/proprietary/lib/libcsd-client.so:system/lib/libcsd-client.so \
     $(LOCAL_PATH)/proprietary/lib/hw/audio.primary.mpq8064.so:system/lib/hw/audio.primary.mpq8064.so \
@@ -260,6 +211,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/proprietary/lib/libloc_eng.so:system/lib/libloc_eng.so \
     $(LOCAL_PATH)/proprietary/lib/hw/gps.default.so:system/lib/hw/gps.default.so \
 
+# Lights
+PRODUCT_COPY_FILES += \
+        $(LOCAL_PATH)/proprietary/lib/hw/lights.msm8960.so:system/lib/hw/lights.msm8960.so \
+
 #NFC
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/proprietary/lib/hw/nfc.default.so:system/lib/hw/nfc.default.so \
@@ -348,15 +303,14 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/proprietary/bin/qmiproxy:system/bin/qmiproxy \
 
+#APN
+#PRODUCT_COPY_FILES += \
+
 #TouchSense Player Service
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/proprietary/bin/immvibed_f6_2v:system/bin/immvibed_f6_2v \
     $(LOCAL_PATH)/proprietary/bin/immvibed_f6_3v:system/bin/immvibed_f6_3v \
     $(LOCAL_PATH)/proprietary/lib/libImmVibeJ.so:system/lib/libImmVibeJ.so \
-
-# Lights
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/proprietary/lib/hw/lights.msm8960.so:system/lib/hw/lights.msm8960.so \
 
 # UNSORTED MAY NOT NEED
 PRODUCT_COPY_FILES += \
