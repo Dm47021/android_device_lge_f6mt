@@ -3523,7 +3523,7 @@ SectionDevice
 		'RX1 MIX1 INP1':0:RX1
 		'DAC3 MUX':0:INV_RX1
 		'DAC2 MUX':0:RX1
-		'RX1 Digital Volume':1:59
+		'RX1 Digital Volume':1:72
 		'LINEOUT1 Volume':1:100
 		'LINEOUT2 Volume':1:100
 		'PMIC SPK Gain':0:POS_10_DB
