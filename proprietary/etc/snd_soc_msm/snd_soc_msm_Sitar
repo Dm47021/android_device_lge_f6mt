@@ -3516,14 +3516,14 @@ EndSection
 
 SectionDevice
 	Name "Speaker"
-	Comment "Speaker Rx device"
+	Comment "Speaker Rx device SYSTEM WIDE VOLUME"
 
 	EnableSequence
 		'SLIM_0_RX Channels':0:One
 		'RX1 MIX1 INP1':0:RX1
 		'DAC3 MUX':0:INV_RX1
 		'DAC2 MUX':0:RX1
-		'RX1 Digital Volume':1:72
+		'RX1 Digital Volume':1:69
 		'LINEOUT1 Volume':1:100
 		'LINEOUT2 Volume':1:100
 		'PMIC SPK Gain':0:POS_10_DB
@@ -3619,9 +3619,9 @@ SectionDevice
 		'DAC2 MUX':0:RX1
 		'DAC3 MUX':0:INV_RX1
       		'DAC4 MUX':0:ON
-		'RX1 Digital Volume':1:48
-		'RX2 Digital Volume':1:48
-		'RX3 Digital Volume':1:48
+		'RX1 Digital Volume':1:54
+		'RX2 Digital Volume':1:54
+		'RX3 Digital Volume':1:54
 		'HPHL Volume':1:45
 		'HPHR Volume':1:45
 		'LINEOUT1 Volume':1:100
@@ -4657,7 +4657,7 @@ SectionDevice
 		'RX1 MIX1 INP1':0:RX1
 		'DAC3 MUX':0:INV_RX1
 		'DAC2 MUX':0:RX1
-		'RX1 Digital Volume':1:60
+		'RX1 Digital Volume':1:66
 		'LINEOUT1 Volume':1:100
 		'LINEOUT2 Volume':1:100
 		'PMIC SPK Gain':0:POS_18_DB
