@@ -5,10 +5,12 @@
 #Script Modified for U.S. Galaxy S3s by Zedomax at GalaxyS3Root.com to be compatible when sdcard is not inserted.
 #Modified to work with LG Optimus F6 [Credit androidguy1991]
 
+#Modified to work with Kitkat for F6 /dev/block/vold/179:32  [Credit DM47021]
+
 busybox mount -o remount,rw /
 
-busybox mount -t vfat -o umask=0000 /dev/block/vold/179:33  /mnt/sdcard
-busybox mount -t exfat -o umask=0000 /dev/block/vold/179:33  /mnt/sdcard
+busybox mount -t vfat -o umask=0000 /dev/block/vold/179:32  /mnt/sdcard
+busybox mount -t exfat -o umask=0000 /dev/block/vold/179:32  /mnt/sdcard
 if busybox mount | busybox grep vold/179:33; then
 busybox mount -o bind /data/media  /mnt/external_SD
 fi
