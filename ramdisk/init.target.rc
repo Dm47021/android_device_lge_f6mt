@@ -604,9 +604,10 @@ service thermal_disable /system/bin/thermald --config-file /system/etc/thermald-
         class late_start
 	disabled
 	oneshot
+      
+        chmod 0777 /sbin/init.f6.external_memory.sh
 
 service f6_external_memory /sbin/sh /sbin/init.f6.external_memory.sh
-        class late_start
         user root
         group root
         oneshot
