@@ -11,6 +11,6 @@ busybox mount -o remount,rw /
 
 busybox mount -t vfat -o umask=0000 /dev/block/vold/179:32  /mnt/sdcard
 busybox mount -t exfat -o umask=0000 /dev/block/vold/179:32  /mnt/sdcard
-if busybox mount | busybox grep vold/179:33; then
+if busybox mount | busybox grep vold/179:32; then
 busybox mount -o bind /data/media  /mnt/external_SD
 fi
