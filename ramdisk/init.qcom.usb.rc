@@ -36,6 +36,12 @@ service qcom-usb-sh /system/bin/sh /init.qcom.usb.sh
     user root
     oneshot
 
+service qcom-cmm-usb-sh /system/bin/sh /init.qcom.cmm.usb.sh
+    class core
+    user root
+    oneshot
+    disabled
+
 # This should only be used during device bringup
 on property:sys.usb.config=mtp,diag,adb
     write /sys/class/android_usb/android0/enable 0
