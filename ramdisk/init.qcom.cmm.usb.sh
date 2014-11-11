@@ -40,6 +40,6 @@ case "$usb_config" in
 	;;
 	"boot,adb") #factory status, select default
 		setprop persist.sys.usb.config charge_only,adb
-	;;
+        ;;
 	*) ;; #USB persist config exists, do nothing
 esac

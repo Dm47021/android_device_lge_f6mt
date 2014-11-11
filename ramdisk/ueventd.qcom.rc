@@ -152,11 +152,10 @@
 
 /sys/devices/i2c-12/12-000f enable 0660 root system
 /sys/devices/i2c-12/12-000f poll 0660 root system
-#/sys/devices/i2c-12/12-000f enable 0666 root system
-#/sys/devices/i2c-12/12-000f poll 0666 root system
 
-# LGE_CHANGE_S [younglae.kim@lge.com] 2013-02-25, add immersion solution
-# Begin Immersion changes
 /dev/tspdrv               0666   root       root
-# End Immersion changes
-# LGE_CHANGE_E [younglae.kim@lge.com] 2013-02-25
+
+/dev/lightsensor          0640   system     system
+
+
+

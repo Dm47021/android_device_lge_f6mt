@@ -8,6 +8,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ramdisk/init.qcom.lpm_boot.sh:root/init.qcom.lpm_boot.sh \
     $(LOCAL_PATH)/ramdisk/init.qcom.rc:root/init.qcom.rc \
     $(LOCAL_PATH)/ramdisk/init.qcom.sh:root/init.qcom.sh \
+    $(LOCAL_PATH)/ramdisk/init.qcom.cmm.usb.sh:root/init.qcom.cmm.usb.sh \
     $(LOCAL_PATH)/ramdisk/init.qcom.syspart_fixup.sh:root/init.qcom.syspart_fixup.sh \
     $(LOCAL_PATH)/ramdisk/init.qcom.usb.rc:root/init.qcom.usb.rc \
     $(LOCAL_PATH)/ramdisk/init.qcom.usb.sh:root/init.qcom.usb.sh \
@@ -70,7 +71,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00039.rle:root/bootimages/boot_logof6_00039.rle \
     $(LOCAL_PATH)/ramdisk/bootlogo.f6_res_images-timestamp:root/bootlogo.f6_res_images-timestamp \
     $(LOCAL_PATH)/ramdisk/sbin/rr1.sh:root/sbin/rr1.sh \
-    $(LOCAL_PATH)/ramdisk/sbin/recovery:root/sbin/recovery
+    $(LOCAL_PATH)/ramdisk/sbin/recovery:root/sbin/recovery 
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/ramdisk/sbin/init.f6.external_memory.sh:root/sbin/init.f6.external_memory.sh 
 
 # Recovery
 PRODUCT_COPY_FILES += \
