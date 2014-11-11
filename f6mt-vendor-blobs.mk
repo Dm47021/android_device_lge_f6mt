@@ -70,8 +70,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00039.rle:root/bootimages/boot_logof6_00039.rle \
     $(LOCAL_PATH)/ramdisk/bootlogo.f6_res_images-timestamp:root/bootlogo.f6_res_images-timestamp \
     $(LOCAL_PATH)/ramdisk/sbin/rr1.sh:root/sbin/rr1.sh \
-    $(LOCAL_PATH)/ramdisk/sbin/recovery:root/sbin/recovery \
-    $(LOCAL_PATH)/ramdisk/init.boot2recovery.rc:root:init.boot2recovery.rc \
+    $(LOCAL_PATH)/ramdisk/sbin/recovery:root/sbin/recovery
 
 # Recovery
 PRODUCT_COPY_FILES += \
