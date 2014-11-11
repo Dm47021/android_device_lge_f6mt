@@ -111,6 +111,14 @@ on boot
     chown system audio /dev/msm_IRRC_pcm_dec
     chmod 0660 /dev/msm_IRRC_pcm_dec
 
+    # Change permissions for fps_level nodes
+    chown system graphics /sys/class/graphics/fb0/msm_fb_fps_level
+    chown system graphics /sys/class/graphics/fb1/msm_fb_fps_level
+    chown system graphics /sys/class/graphics/fb2/msm_fb_fps_level
+    chmod 644 /sys/class/graphics/fb0/msm_fb_fps_level
+    chmod 400 /sys/class/graphics/fb1/msm_fb_fps_level
+    chmod 400 /sys/class/graphics/fb2/msm_fb_fps_level
+
     chown system system /sys/class/pmic-kpjt/make_patterns/blink_patterns
     chown system system /sys/class/pmic-kpjt/make_patterns/test_patterns
     chown system system /sys/class/pmic-kpjt/use_patterns/setting
