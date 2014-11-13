@@ -258,9 +258,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/proprietary/lib/libloc_eng.so:system/lib/libloc_eng.so \
     $(LOCAL_PATH)/proprietary/lib/hw/gps.default.so:system/lib/hw/gps.default.so \
 
-# Lights
-PRODUCT_COPY_FILES += \
-        $(LOCAL_PATH)/proprietary/lib/hw/lights.msm8960.so:system/lib/hw/lights.msm8960.so \
 
 #NFC
 PRODUCT_COPY_FILES += \
