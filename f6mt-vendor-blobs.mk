@@ -73,9 +73,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ramdisk/sbin/rr1.sh:root/sbin/rr1.sh \
     $(LOCAL_PATH)/ramdisk/sbin/recovery:root/sbin/recovery 
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/proprietary/etc/init.f6.external_memory.sh:system/etc/init.f6.external_memory.sh
-
 # Recovery
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh \
