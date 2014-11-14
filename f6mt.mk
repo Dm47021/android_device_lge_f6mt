@@ -93,14 +93,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
         persist.audio.lowlatency.rec=false \
         af.resampler.quality=255
 
-
-# bdAddrloader
-PRODUCT_PACKAGES += \
-    bdAddrLoader
-
-PRODUCT_COPY_FILES += \
-	device/lge/f6mt/proprietary/etc/bluetooth/main.conf:system/etc/bluetooth/main.conf
-
 # Bluetooth Properties
 PRODUCT_PROPERTY_OVERRIDES += \
         ro.bluetooth.request.master=true \
