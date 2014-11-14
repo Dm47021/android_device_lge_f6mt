@@ -118,7 +118,6 @@ start rr1
     chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
-    chown bluetooth net_bt_stack /proc/bluetooth/sleep/btwake
     chown bluetooth bluetooth /proc/bluetooth/sleep/proto
     chown system system /sys/module/sco/parameters/disable_esco
     chown bluetooth bluetooth /sys/module/hci_smd/parameters/hcismd_set
@@ -127,9 +126,7 @@ start rr1
     chmod 0660 /sys/class/rfkill/rfkill0/type
     chmod 0660 /sys/class/rfkill/rfkill0/state
     chmod 0660 /proc/bluetooth/sleep/proto
-    chown bluetooth net_bt_stack /dev/ttyHS0
-    chmod 0660 /sys/module/hci_uart/parameters/ath_lpm
-    chmod 0660 /sys/module/hci_uart/parameters/ath_btwrite
+    chown bluetooth bluetooth /dev/ttyHS0
     chmod 0660 /dev/ttyHS0
     chown bluetooth bluetooth /sys/devices/platform/msm_serial_hs.0/clock
     chmod 0660 /sys/devices/platform/msm_serial_hs.0/clock
@@ -188,9 +185,6 @@ start rr1
 # LGE_CHANGE_E, 2012-11-30, donghyuk79.park@lge.com, K-PJT
 
    chown system system /sys/class/power_supply/battery/block_charging
-
-# For Int2Ext memory
-   setprop persist.f6.int2ext 1
 
 on post-fs-data
 chown system system /persist-lg
@@ -572,11 +566,19 @@ service time_daemon /system/bin/time_daemon
    user root
    group root
 
+service f6_external_memory /system/bin/sh /system/etc/init.qcom.class_main.sh 
+   class late_start    
+   user root
+   group root
+   oneshot
+   disabled
+
 on property:sys.boot_completed=1
     write /sys/class/input/input5/dynamic_matrix "10157 184 -98 184 9741 -556 -98 -556 10139"
     write /sys/class/input/input5/offsets "-1 9 1 493163 -131368 1406126 3"
     write /sys/class/leds/led:rgb_red/brightness "0"
     write /sys/class/leds/led:rgb_green/brightness "0"
+    start f6_external_memory
 
 service bdAddrLoader /system/bin/bdAddrLoader -f /persist/bluetooth/.bdaddr -h -x
     class main
@@ -604,14 +606,6 @@ service thermal_disable /system/bin/thermald --config-file /system/etc/thermald-
         class late_start
 	disabled
 	oneshot
-      
-        chmod 0777 /sbin/init.f6.external_memory.sh
-
-service f6_external_memory /sbin/sh /sbin/init.f6.external_memory.sh
-        user root
-        group root
-        oneshot
-        disabled
     
 on property:persist.service.ther.enable=true
 	start thermal_enable
@@ -628,7 +622,4 @@ service rr2 /sbin/reboot recovery
 
 on property:ro.r.r=1
         start rr2
-
-on property:persist.f6.int2ext=1
-        start f6_external_memory
 
