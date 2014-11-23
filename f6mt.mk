@@ -163,10 +163,6 @@ PRODUCT_PACKAGES += \
     regulatory.bin \
     linville.key.pub.pem
 
-#SWIRRC 
-PRODUCT_PACKAGES += \
-    consumerir.f6mt
-
 # Torch
 PRODUCT_PACKAGES += Torch
 
