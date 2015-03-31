@@ -25,6 +25,9 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
+# DM47021 Fix boot on Aosp roms if /data has been set to 0 by bootloader 
+import init.restore-data.rc 
+
 import init.qcom.usb.rc
 import init.target.rc
 

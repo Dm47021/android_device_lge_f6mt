@@ -1,5 +1,3 @@
-# f6mt vendor blobs
-$(call inherit-product-if-exists, device/lge/f6mt/f6mt-vendor-blobs.mk)
 
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
