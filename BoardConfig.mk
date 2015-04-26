@@ -36,6 +36,7 @@ TARGET_SPECIFIC_HEADER_PATH := device/lge/f6mt/include
 TARGET_NO_INITLOGO := true
 
 # Krait optimizations
+ARCH_ARM_HAVE_NEON := true
 TARGET_USE_KRAIT_BIONIC_OPTIMIZATION := true
 TARGET_USE_KRAIT_PLD_SET := true
 TARGET_KRAIT_BIONIC_PLDOFFS := 10
@@ -71,12 +72,12 @@ BOARD_RECOVERY_SWIPE := true
 TARGET_QCOM_DISPLAY_VARIANT := caf
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno305
 USE_OPENGL_RENDERER := true
+TARGET_USES_OVERLAY := true
 BOARD_USES_HWCOMPOSER := true
-
-VSYNC_EVENT_PHASE_OFFSET_NS := 7500000
-SF_VSYNC_EVENT_PHASE_OFFSET_NS := 5000000
+TARGET_USES_SF_BYPASS := true
 TARGET_USES_C2D_COMPOSITION := true
 TARGET_USES_ION := true
+TARGET_DISPLAY_INSECURE_MM_HEAP := true
 BOARD_EGL_CFG := device/lge/f6mt/proprietary/lib/egl/egl.cfg
 
 # Lights
@@ -99,19 +100,19 @@ TARGET_PROVIDES_CAMERA_HAL := true
 TARGET_PROVIDES_LIBCAMERA := true
 COMMON_GLOBAL_CFLAGS += -DLGF6_CAMERA_HARDWARE
 
-# Wifi related defines
-WIFI_BAND := 802_11_ABGN
-BOARD_WLAN_DEVICE_REV := bcm4330
-WPA_SUPPLICANT_VERSION := VER_0_8_X
-BOARD_WPA_SUPPLICANT_DRIVER := NL80211
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_bcmdhd
-BOARD_HOSTAPD_DRIVER := NL80211
-BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_bcmdhd
-BOARD_WLAN_DEVICE := bcmdhd
-WIFI_DRIVER_FW_PATH_STA := "/system/etc/firmware/fw_bcmdhd.bin"
-WIFI_DRIVER_FW_PATH_AP := "/system/etc/firmware/fw_bcmdhd_apsta.bin"
-WIFI_DRIVER_FW_PATH_P2P := "/system/etc/firmware/fw_bcmdhd_p2p.bin"
-WIFI_DRIVER_FW_PATH_PARAM := "/sys/module/bcmdhd/parameters/firmware_path"
+# Wifi
+BOARD_WLAN_DEVICE 		:= bcmdhd
+BOARD_WLAN_DEVICE_REV 		:= bcm4330
+WIFI_DRIVER_FW_PATH_PARAM 	:= "/sys/module/bcmdhd/parameters/firmware_path"
+WIFI_DRIVER_FW_PATH_STA 	:= "/system/etc/firmware/fw_bcmdhd.bin"
+WIFI_DRIVER_FW_PATH_AP 		:= "/system/etc/firmware/fw_bcmdhd_apsta.bin"
+WIFI_DRIVER_FW_PATH_P2P 	:= "/system/etc/firmware/fw_bcmdhd_p2p.bin"
+WIFI_BAND 			:= 802_11_ABGN
+BOARD_WPA_SUPPLICANT_DRIVER 	:= NL80211
+BOARD_HOSTAPD_DRIVER 		:= NL80211
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
+BOARD_HOSTAPD_PRIVATE_LIB 	:= lib_driver_cmd_$(BOARD_WLAN_DEVICE)
+WPA_SUPPLICANT_VERSION 		:= VER_0_8_X
 
 
 # BLUETOOTH 
@@ -135,8 +136,8 @@ BOARD_HAVE_NFC := true
 BOARD_USES_QC_TIME_SERVICES := true
 
 # PowerHAL
-TARGET_USES_CM_POWERHAL := true
-CM_POWERHAL_EXTENSION := f6mt
+POWERHAL_EXTENSION := f6mt
+TARGET_POWERHAL_TOUCH_BOOST := true
 
 # Charger
 BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/power_supply/battery/batt_lp_charging
@@ -156,7 +157,7 @@ TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := ./device/lge/f6mt/releasetools/ota_
 TARGET_OTA_ASSERT_DEVICE := LGMS500,f6mt
 
 # Vibrator
-BOARD_HAS_VIBRATOR_IMPLEMENTATION := ../../device/lge/f6mt/vibrator/tspdrv.c
+#BOARD_HAS_VIBRATOR_IMPLEMENTATION := ../../device/lge/f6mt/vibrator/tspdrv.c
 
 # Web
 WEBRTC_BUILD_NEON_LIBS := true
