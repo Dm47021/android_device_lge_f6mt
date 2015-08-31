@@ -8,15 +8,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ramdisk/init.qcom.lpm_boot.sh:root/init.qcom.lpm_boot.sh \
     $(LOCAL_PATH)/ramdisk/init.qcom.rc:root/init.qcom.rc \
     $(LOCAL_PATH)/ramdisk/init.qcom.sh:root/init.qcom.sh \
-    $(LOCAL_PATH)/ramdisk/init.qcom.cmm.usb.sh:root/init.qcom.cmm.usb.sh \
     $(LOCAL_PATH)/ramdisk/init.qcom.syspart_fixup.sh:root/init.qcom.syspart_fixup.sh \
     $(LOCAL_PATH)/ramdisk/init.qcom.usb.rc:root/init.qcom.usb.rc \
     $(LOCAL_PATH)/ramdisk/init.qcom.usb.sh:root/init.qcom.usb.sh \
     $(LOCAL_PATH)/ramdisk/init.target.rc:root/init.target.rc \
-    $(LOCAL_PATH)/ramdisk/sbin/chargerlogo:root/sbin/chargerlogo \
-    $(LOCAL_PATH)/ramdisk/sbin/healthd:root/sbin/healthd \
-    $(LOCAL_PATH)/ramdisk/charger:root/charger \
-    $(LOCAL_PATH)/ramdisk/chargerlogo_res_images-timestamp:root/chargerlogo_res_images-timestamp \
     $(LOCAL_PATH)/ramdisk/lpm.rc:root/lpm.rc \
     $(LOCAL_PATH)/ramdisk/ueventd.qcom.rc:root/ueventd.qcom.rc \
     $(LOCAL_PATH)/ramdisk/res/images/charger/battery_0.png:root/res/images/charger/battery_0.png \
@@ -27,51 +22,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ramdisk/res/images/charger/battery_5.png:root/res/images/charger/battery_5.png \
     $(LOCAL_PATH)/ramdisk/res/images/charger/battery_charge.png:root/res/images/charger/battery_charge.png \
     $(LOCAL_PATH)/ramdisk/res/images/charger/battery_fail.png:root/res/images/charger/battery_fail.png \
-    $(LOCAL_PATH)/ramdisk/initlogo.rle:root/initlogo.rle \
-    $(LOCAL_PATH)/ramdisk/sbin/bootlogo.f6:root/sbin/bootlogo.f6 \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00000.rle:root/bootimages/boot_logof6_00000.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00001.rle:root/bootimages/boot_logof6_00001.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00002.rle:root/bootimages/boot_logof6_00002.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00003.rle:root/bootimages/boot_logof6_00003.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00004.rle:root/bootimages/boot_logof6_00004.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00005.rle:root/bootimages/boot_logof6_00005.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00006.rle:root/bootimages/boot_logof6_00006.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00007.rle:root/bootimages/boot_logof6_00007.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00008.rle:root/bootimages/boot_logof6_00008.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00009.rle:root/bootimages/boot_logof6_00009.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00010.rle:root/bootimages/boot_logof6_00010.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00011.rle:root/bootimages/boot_logof6_00011.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00012.rle:root/bootimages/boot_logof6_00012.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00013.rle:root/bootimages/boot_logof6_00013.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00014.rle:root/bootimages/boot_logof6_00014.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00015.rle:root/bootimages/boot_logof6_00015.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00016.rle:root/bootimages/boot_logof6_00016.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00017.rle:root/bootimages/boot_logof6_00017.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00018.rle:root/bootimages/boot_logof6_00018.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00019.rle:root/bootimages/boot_logof6_00019.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00020.rle:root/bootimages/boot_logof6_00020.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00021.rle:root/bootimages/boot_logof6_00021.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00022.rle:root/bootimages/boot_logof6_00022.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00023.rle:root/bootimages/boot_logof6_00023.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00024.rle:root/bootimages/boot_logof6_00024.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00025.rle:root/bootimages/boot_logof6_00025.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00026.rle:root/bootimages/boot_logof6_00026.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00027.rle:root/bootimages/boot_logof6_00027.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00028.rle:root/bootimages/boot_logof6_00028.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00029.rle:root/bootimages/boot_logof6_00029.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00030.rle:root/bootimages/boot_logof6_00030.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00031.rle:root/bootimages/boot_logof6_00031.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00032.rle:root/bootimages/boot_logof6_00032.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00033.rle:root/bootimages/boot_logof6_00033.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00034.rle:root/bootimages/boot_logof6_00034.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00035.rle:root/bootimages/boot_logof6_00035.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00036.rle:root/bootimages/boot_logof6_00036.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00037.rle:root/bootimages/boot_logof6_00037.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00038.rle:root/bootimages/boot_logof6_00038.rle \
-    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00039.rle:root/bootimages/boot_logof6_00039.rle \
-    $(LOCAL_PATH)/ramdisk/bootlogo.f6_res_images-timestamp:root/bootlogo.f6_res_images-timestamp \
     $(LOCAL_PATH)/ramdisk/sbin/rr1.sh:root/sbin/rr1.sh \
-    $(LOCAL_PATH)/ramdisk/sbin/recovery:root/sbin/recovery 
+    $(LOCAL_PATH)/ramdisk/sbin/recovery:root/sbin/recovery \
 
 # Recovery
 PRODUCT_COPY_FILES += \
@@ -134,19 +86,7 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/proprietary/bin/mm-jpeg-dec-test:system/bin/mm-jpeg-dec-test \
-    $(LOCAL_PATH)/proprietary/bin/mm-jpeg-dec-test-client:system/bin/mm-jpeg-dec-test-client \
-    $(LOCAL_PATH)/proprietary/bin/mm-jpeg-enc-test:system/bin/mm-jpeg-enc-test \
-    $(LOCAL_PATH)/proprietary/bin/mm-jpeg-enc-test-client:system/bin/mm-jpeg-enc-test-client \
-    $(LOCAL_PATH)/proprietary/bin/mm-jps-enc-test:system/bin/mm-jps-enc-test \
-    $(LOCAL_PATH)/proprietary/bin/mm-mpo-dec-test:system/bin/mm-mpo-dec-test \
-    $(LOCAL_PATH)/proprietary/bin/mm-mpo-enc-test:system/bin/mm-mpo-enc-test \
-    $(LOCAL_PATH)/proprietary/bin/mm-qcamera-app:system/bin/mm-qcamera-app \
     $(LOCAL_PATH)/proprietary/bin/mm-qcamera-daemon:system/bin/mm-qcamera-daemon \
-    $(LOCAL_PATH)/proprietary/bin/mm-qcamera-test:system/bin/mm-qcamera-test \
-    $(LOCAL_PATH)/proprietary/bin/v4l2-qcamera-app:system/bin/v4l2-qcamera-app \
-    $(LOCAL_PATH)/proprietary/bin/mm-qcamera-testsuite-client:system/bin/mm-qcamera-testsuite-client \
-    $(LOCAL_PATH)/proprietary/bin/test_gemini:system/bin/test_gemini \
     $(LOCAL_PATH)/proprietary/lib/libadsprpc.so:system/lib/libadsprpc.so \
     $(LOCAL_PATH)/proprietary/lib/libchromatix_imx111_default_video.so:system/lib/libchromatix_imx111_default_video.so \
     $(LOCAL_PATH)/proprietary/lib/libchromatix_imx111_preview.so:system/lib/libchromatix_imx111_preview.so \
@@ -172,6 +112,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/proprietary/lib/libmmcamera_tintless_wrapper.so:system/lib/libmmcamera_tintless_wrapper.so \
     $(LOCAL_PATH)/proprietary/lib/libmmcamera_wavelet_lib.so:system/lib/libmmcamera_wavelet_lib.so \
     $(LOCAL_PATH)/proprietary/lib/libgemini.so:system/lib/libgemini.so \
+    $(LOCAL_PATH)/proprietary/lib/libHDR.so:system/lib/libHDR.so \
     $(LOCAL_PATH)/proprietary/lib/libimage-jpeg-dec-omx-comp.so:system/lib/libimage-jpeg-dec-omx-comp.so \
     $(LOCAL_PATH)/proprietary/lib/libimage-jpeg-enc-omx-comp.so:system/lib/libimage-jpeg-enc-omx-comp.so \
     $(LOCAL_PATH)/proprietary/lib/libimage-omx-common.so:system/lib/libimage-omx-common.so \
@@ -195,6 +136,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/proprietary/bin/mdm_helper:system/bin/mdm_helper \
     $(LOCAL_PATH)/proprietary/bin/netmgrd:system/bin/netmgrd \
     $(LOCAL_PATH)/proprietary/bin/qmuxd:system/bin/qmuxd \
+    $(LOCAL_PATH)/proprietary/bin/rild:system/bin/rild \
     $(LOCAL_PATH)/proprietary/bin/rmt_storage:system/bin/rmt_storage \
     $(LOCAL_PATH)/proprietary/bin/sec-ril:system/bin/sec-ril \
     $(LOCAL_PATH)/proprietary/lib/libcordon.so:system/lib/libcordon.so \
@@ -224,7 +166,6 @@ PRODUCT_COPY_FILES += \
 
 # Wifi
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/proprietary/bin/dhd:system/bin/dhd \
     $(LOCAL_PATH)/proprietary/etc/firmware/fw_bcmdhd.bin:system/etc/firmware/fw_bcmdhd.bin \
     $(LOCAL_PATH)/proprietary/etc/firmware/fw_bcmdhd_apsta.bin:system/etc/firmware/fw_bcmdhd_apsta.bin \
     $(LOCAL_PATH)/proprietary/etc/firmware/fw_bcmdhd_mfg.bin:system/etc/firmware/fw_bcmdhd_mfg.bin \
@@ -242,21 +183,15 @@ PRODUCT_COPY_FILES += \
 # Bluetooth
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/proprietary/bin/BCM4334B0_002.001.013.1123.1127.hcd:system/bin/BCM4334B0_002.001.013.1123.1127.hcd \
-    $(LOCAL_PATH)/proprietary/bin/brcm_patchram_plus:system/bin/brcm_patchram_plus \
-    $(LOCAL_PATH)/proprietary/bin/btnvtool:system/bin/btnvtool \
-    $(LOCAL_PATH)/proprietary/bin/hci_qcomm_init:system/bin/hci_qcomm_init \
 
 # GPS
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/proprietary/lib/libgps.utils.so:system/lib/libgps.utils.so \
     $(LOCAL_PATH)/proprietary/lib/libloc_api_v02.so:system/lib/libloc_api_v02.so \
     $(LOCAL_PATH)/proprietary/lib/libloc_core.so:system/lib/libloc_core.so \
     $(LOCAL_PATH)/proprietary/lib/libloc_ds_api.so:system/lib/libloc_ds_api.so \
     $(LOCAL_PATH)/proprietary/lib/libloc_eng.so:system/lib/libloc_eng.so \
     $(LOCAL_PATH)/proprietary/lib/hw/gps.default.so:system/lib/hw/gps.default.so \
-
-# Lights
-PRODUCT_COPY_FILES += \
-        $(LOCAL_PATH)/proprietary/lib/hw/lights.msm8960.so:system/lib/hw/lights.msm8960.so \
 
 #NFC
 PRODUCT_COPY_FILES += \
@@ -281,6 +216,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/proprietary/lib/libqc-opt.so:system/lib/libqc-opt.so \
 
+# Lights
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/proprietary/lib/hw/lights.msm8960.so:system/lib/hw/lights.msm8960.so \
+    $(LOCAL_PATH)/proprietary/lib/libproxyhal.so:system/lib/libproxyhal.so \
 
 # Keylayouts \ Keychars
 PRODUCT_COPY_FILES += \
@@ -323,7 +262,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/proprietary/etc/init.qcom.audio.sh:system/etc/init.qcom.audio.sh \
     $(LOCAL_PATH)/proprietary/etc/init.qcom.coex.sh:system/etc/init.qcom.coex.sh \
     $(LOCAL_PATH)/proprietary/etc/init.qcom.efs.sync.sh:system/etc/init.qcom.efs.sync.sh \
-    $(LOCAL_PATH)/proprietary/etc/init.qcom.fm.sh:system/etc/init.qcom.fm.sh \
     $(LOCAL_PATH)/proprietary/etc/init.qcom.mdm_links.sh:system/etc/init.qcom.mdm_links.sh \
     $(LOCAL_PATH)/proprietary/etc/init.qcom.modem_links.sh:system/etc/init.qcom.modem_links.sh \
     $(LOCAL_PATH)/proprietary/etc/init.qcom.post_boot.sh:system/etc/init.qcom.post_boot.sh \
@@ -344,33 +282,28 @@ PRODUCT_COPY_FILES += \
 
 # CALLED IN INIT.RC MAY NOT NEED
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/proprietary/bin/qmiproxy:system/bin/qmiproxy \
-
-#TouchSense Player Service
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/proprietary/bin/immvibed_f6_2v:system/bin/immvibed_f6_2v \
-    $(LOCAL_PATH)/proprietary/bin/immvibed_f6_3v:system/bin/immvibed_f6_3v \
-    $(LOCAL_PATH)/proprietary/lib/libImmVibeJ.so:system/lib/libImmVibeJ.so \
+    $(LOCAL_PATH)/proprietary/bin/atd:system/bin/atd \
+    $(LOCAL_PATH)/proprietary/bin/cnd:system/bin/cnd \
+    $(LOCAL_PATH)/proprietary/bin/mpdecision:system/bin/mpdecision \
+    $(LOCAL_PATH)/proprietary/bin/qseecomd:system/bin/qseecomd \
+    $(LOCAL_PATH)/proprietary/bin/sensord:system/bin/sensord \
+    $(LOCAL_PATH)/proprietary/bin/ssr_diag:system/bin/ssr_diag \
+    $(LOCAL_PATH)/proprietary/bin/thermald:system/bin/thermald \
 
 # UNSORTED MAY NOT NEED
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/proprietary/bin/aloop:system/bin/aloop \
     $(LOCAL_PATH)/proprietary/bin/aplay_lb:system/bin/aplay_lb \
-    $(LOCAL_PATH)/proprietary/bin/atd:system/bin/atd \
     $(LOCAL_PATH)/proprietary/bin/ATFWD-daemon:system/bin/ATFWD-daemon \
+    $(LOCAL_PATH)/proprietary/bin/bdaddr_loader:system/bin/bdaddr_loader \
     $(LOCAL_PATH)/proprietary/bin/bnrd:system/bin/bnrd \
-    $(LOCAL_PATH)/proprietary/bin/bridgemgrd:system/bin/bridgemgrd \
-    $(LOCAL_PATH)/proprietary/bin/cnd:system/bin/cnd \
     $(LOCAL_PATH)/proprietary/bin/cpfirmware:system/bin/cpfirmware \
     $(LOCAL_PATH)/proprietary/bin/curl:system/bin/curl \
     $(LOCAL_PATH)/proprietary/bin/diag_callback_client:system/bin/diag_callback_client \
-    $(LOCAL_PATH)/proprietary/bin/diagd:system/bin/diagd \
     $(LOCAL_PATH)/proprietary/bin/diag_klog:system/bin/diag_klog \
-    $(LOCAL_PATH)/proprietary/bin/diag_mdlog:system/bin/diag_mdlog \
     $(LOCAL_PATH)/proprietary/bin/diag_socket_log:system/bin/diag_socket_log \
     $(LOCAL_PATH)/proprietary/bin/diag_uart_log:system/bin/diag_uart_log \
     $(LOCAL_PATH)/proprietary/bin/digicl.sh:system/bin/digicl.sh \
-    $(LOCAL_PATH)/proprietary/bin/drmdiagapp:system/bin/drmdiagapp \
     $(LOCAL_PATH)/proprietary/bin/dsqn:system/bin/dsqn \
     $(LOCAL_PATH)/proprietary/bin/dun-server:system/bin/dun-server \
     $(LOCAL_PATH)/proprietary/bin/efsks:system/bin/efsks \
@@ -388,8 +321,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/proprietary/bin/lgdrmserver:system/bin/lgdrmserver \
     $(LOCAL_PATH)/proprietary/bin/lgsecclkserver:system/bin/lgsecclkserver \
     $(LOCAL_PATH)/proprietary/bin/mcStarter:system/bin/mcStarter \
-    $(LOCAL_PATH)/proprietary/bin/mm-pp-daemon:system/bin/mm-pp-daemon \
-    $(LOCAL_PATH)/proprietary/bin/mpdecision:system/bin/mpdecision \
     $(LOCAL_PATH)/proprietary/bin/mtsd:system/bin/mtsd \
     $(LOCAL_PATH)/proprietary/bin/nbtscan:system/bin/nbtscan \
     $(LOCAL_PATH)/proprietary/bin/nfskillprocess:system/bin/nfskillprocess \
@@ -399,32 +330,20 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/proprietary/bin/n_smux:system/bin/n_smux \
     $(LOCAL_PATH)/proprietary/bin/oemwvtest:system/bin/oemwvtest \
     $(LOCAL_PATH)/proprietary/bin/PktRspTest:system/bin/PktRspTest \
-    $(LOCAL_PATH)/proprietary/bin/port-bridge:system/bin/port-bridge \
-    $(LOCAL_PATH)/proprietary/bin/profiler_daemon:system/bin/profiler_daemon \
-    $(LOCAL_PATH)/proprietary/bin/qcks:system/bin/qcks \
-    $(LOCAL_PATH)/proprietary/bin/qseecomd:system/bin/qseecomd \
     $(LOCAL_PATH)/proprietary/bin/qseecom_sample_client:system/bin/qseecom_sample_client \
     $(LOCAL_PATH)/proprietary/bin/qseecom_security_test:system/bin/qseecom_security_test \
     $(LOCAL_PATH)/proprietary/bin/quickdump.sh:system/bin/quickdump.sh \
     $(LOCAL_PATH)/proprietary/bin/radish:system/bin/radish \
-    $(LOCAL_PATH)/proprietary/bin/sapd:system/bin/sapd \
-    $(LOCAL_PATH)/proprietary/bin/sensord:system/bin/sensord \
-    $(LOCAL_PATH)/proprietary/bin/sensors.qcom:system/bin/sensors.qcom \
     $(LOCAL_PATH)/proprietary/bin/shutdownanimation:system/bin/shutdownanimation \
     $(LOCAL_PATH)/proprietary/bin/smbd:system/bin/smbd \
     $(LOCAL_PATH)/proprietary/bin/smpl_count:system/bin/smpl_count \
     $(LOCAL_PATH)/proprietary/bin/ssbd:system/bin/ssbd \
-    $(LOCAL_PATH)/proprietary/bin/ssr_diag:system/bin/ssr_diag \
     $(LOCAL_PATH)/proprietary/bin/StoreKeybox:system/bin/StoreKeybox \
     $(LOCAL_PATH)/proprietary/bin/subsystem_ramdump:system/bin/subsystem_ramdump \
     $(LOCAL_PATH)/proprietary/bin/tar:system/bin/tar \
     $(LOCAL_PATH)/proprietary/bin/test_diag:system/bin/test_diag \
-    $(LOCAL_PATH)/proprietary/bin/thermald:system/bin/thermald \
     $(LOCAL_PATH)/proprietary/bin/thermal-engine:system/bin/thermal-engine \
     $(LOCAL_PATH)/proprietary/bin/usbhub:system/bin/usbhub \
-    $(LOCAL_PATH)/proprietary/bin/usbhub_init:system/bin/usbhub_init \
-    $(LOCAL_PATH)/proprietary/bin/usf_epos:system/bin/usf_epos \
-    $(LOCAL_PATH)/proprietary/bin/usf_tester:system/bin/usf_tester \
     $(LOCAL_PATH)/proprietary/bin/wdsdaemon:system/bin/wdsdaemon \
     $(LOCAL_PATH)/proprietary/bin/wl:system/bin/wl \
     $(LOCAL_PATH)/proprietary/etc/gps.conf:system/etc/gps.conf \
@@ -458,12 +377,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/proprietary/lib/libdrmfs.so:system/lib/libdrmfs.so \
     $(LOCAL_PATH)/proprietary/lib/libdrmtime.so:system/lib/libdrmtime.so \
     $(LOCAL_PATH)/proprietary/lib/libDS-2.2.30.so:system/lib/libDS-2.2.30.so \
-    $(LOCAL_PATH)/proprietary/lib/libdsi_netctrl.so:system/lib/libdsi_netctrl.so \
     $(LOCAL_PATH)/proprietary/lib/libdsprofile.so:system/lib/libdsprofile.so \
     $(LOCAL_PATH)/proprietary/lib/libdsqnif.so:system/lib/libdsqnif.so \
     $(LOCAL_PATH)/proprietary/lib/libdss.so:system/lib/libdss.so \
     $(LOCAL_PATH)/proprietary/lib/libdsucsd.so:system/lib/libdsucsd.so \
-    $(LOCAL_PATH)/proprietary/lib/libdsutils.so:system/lib/libdsutils.so \
     $(LOCAL_PATH)/proprietary/lib/libEASInterface.so:system/lib/libEASInterface.so \
     $(LOCAL_PATH)/proprietary/lib/libecryptfs.so:system/lib/libecryptfs.so \
     $(LOCAL_PATH)/proprietary/lib/libecryptfs_key_mod_passphrase.so:system/lib/libecryptfs_key_mod_passphrase.so \
@@ -480,9 +397,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/proprietary/lib/libgcrypt.so:system/lib/libgcrypt.so \
     $(LOCAL_PATH)/proprietary/lib/libgnu.so:system/lib/libgnu.so \
     $(LOCAL_PATH)/proprietary/lib/libgpg-error.so:system/lib/libgpg-error.so \
-    $(LOCAL_PATH)/proprietary/lib/libgps.utils.so:system/lib/libgps.utils.so \
     $(LOCAL_PATH)/proprietary/lib/libharfbuzz.so:system/lib/libharfbuzz.so \
-    $(LOCAL_PATH)/proprietary/lib/libHDR.so:system/lib/libHDR.so \
     $(LOCAL_PATH)/proprietary/lib/libhook_jni.so:system/lib/libhook_jni.so \
     $(LOCAL_PATH)/proprietary/lib/libHtmlEditor.so:system/lib/libHtmlEditor.so \
     $(LOCAL_PATH)/proprietary/lib/libidl.so:system/lib/libidl.so \
@@ -554,7 +469,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/proprietary/lib/libndk_jni.so:system/lib/libndk_jni.so \
     $(LOCAL_PATH)/proprietary/lib/libnetfilter_conntrack.so:system/lib/libnetfilter_conntrack.so \
     $(LOCAL_PATH)/proprietary/lib/libnetjni.so:system/lib/libnetjni.so \
-    $(LOCAL_PATH)/proprietary/lib/libnetmgr.so:system/lib/libnetmgr.so \
     $(LOCAL_PATH)/proprietary/lib/libnfnetlink.so:system/lib/libnfnetlink.so \
     $(LOCAL_PATH)/proprietary/lib/libNimsWrap.so:system/lib/libNimsWrap.so \
     $(LOCAL_PATH)/proprietary/lib/libnsesolver.so:system/lib/libnsesolver.so \
@@ -566,10 +480,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/proprietary/lib/libOmxQcelp13Dec.so:system/lib/libOmxQcelp13Dec.so \
     $(LOCAL_PATH)/proprietary/lib/libOmxWmaDec.so:system/lib/libOmxWmaDec.so \
     $(LOCAL_PATH)/proprietary/lib/libprofiler_msmadc.so:system/lib/libprofiler_msmadc.so \
-    $(LOCAL_PATH)/proprietary/lib/libproxyhal.so:system/lib/libproxyhal.so \
     $(LOCAL_PATH)/proprietary/lib/libpsrnlge.so:system/lib/libpsrnlge.so \
     $(LOCAL_PATH)/proprietary/lib/libq3d.so:system/lib/libq3d.so \
-    $(LOCAL_PATH)/proprietary/lib/libqdp.so:system/lib/libqdp.so \
     $(LOCAL_PATH)/proprietary/lib/libqs.so:system/lib/libqs.so \
     $(LOCAL_PATH)/proprietary/lib/libQSEEComAPI.so:system/lib/libQSEEComAPI.so \
     $(LOCAL_PATH)/proprietary/lib/librctransport.so:system/lib/librctransport.so \
@@ -615,6 +527,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/proprietary/lib/libxml.so:system/lib/libxml.so \
     $(LOCAL_PATH)/proprietary/lib/libxml2.so:system/lib/libxml2.so \
     $(LOCAL_PATH)/proprietary/lib/hw/bplus.default.so:system/lib/hw/bplus.default.so \
+    $(LOCAL_PATH)/proprietary/lib/hw/lights.msm8960.so:system/lib/hw/lights.msm8960.so \
     $(LOCAL_PATH)/proprietary/vendor/lib/libalarmservice_jni.so:system/vendor/lib/libalarmservice_jni.so \
     $(LOCAL_PATH)/proprietary/vendor/lib/lib-dplmedia.so:system/vendor/lib/lib-dplmedia.so \
     $(LOCAL_PATH)/proprietary/vendor/lib/libdrmdecrypt.so:system/vendor/lib/libdrmdecrypt.so \
@@ -653,17 +566,47 @@ PRODUCT_COPY_FILES += \
 
 # UNSORTED FROM JB ROM MAY OR MAY NOT NEED
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/proprietary/bin/cp:system/bin/cp \
+    $(LOCAL_PATH)/proprietary/bin/dbus-daemon:system/bin/dbus-daemon \
     $(LOCAL_PATH)/proprietary/bin/diag_dci_client:system/bin/diag_dci_client \
     $(LOCAL_PATH)/proprietary/bin/location-mq:system/bin/location-mq \
+    $(LOCAL_PATH)/proprietary/bin/mcDriverDaemonQC:system/bin/mcDriverDaemonQC \
+    $(LOCAL_PATH)/proprietary/bin/mm-adec-omxaac-test:system/bin/mm-adec-omxaac-test \
+    $(LOCAL_PATH)/proprietary/bin/mm-aenc-omxaac-test:system/bin/mm-aenc-omxaac-test \
+    $(LOCAL_PATH)/proprietary/bin/mm-aenc-omxamr-test:system/bin/mm-aenc-omxamr-test \
+    $(LOCAL_PATH)/proprietary/bin/mm-aenc-omxevrc-test:system/bin/mm-aenc-omxevrc-test \
+    $(LOCAL_PATH)/proprietary/bin/mm-aenc-omxqcelp13-test:system/bin/mm-aenc-omxqcelp13-test \
+    $(LOCAL_PATH)/proprietary/bin/mm-gs-camctrl-test:system/bin/mm-gs-camctrl-test \
+    $(LOCAL_PATH)/proprietary/bin/mtsd_file_manager:system/bin/mtsd_file_manager \
+    $(LOCAL_PATH)/proprietary/bin/mtsd_kmsg:system/bin/mtsd_kmsg \
+    $(LOCAL_PATH)/proprietary/bin/mtsd_logcat_events:system/bin/mtsd_logcat_events \
+    $(LOCAL_PATH)/proprietary/bin/mtsd_logcat_filter:system/bin/mtsd_logcat_filter \
+    $(LOCAL_PATH)/proprietary/bin/mtsd_logcat_main:system/bin/mtsd_logcat_main \
+    $(LOCAL_PATH)/proprietary/bin/mtsd_logcat_radio:system/bin/mtsd_logcat_radio \
+    $(LOCAL_PATH)/proprietary/bin/mtsd_logcat_system:system/bin/mtsd_logcat_system \
+    $(LOCAL_PATH)/proprietary/bin/mtsd_miniOS:system/bin/mtsd_miniOS \
+    $(LOCAL_PATH)/proprietary/bin/mtsd_miniOS_fm:system/bin/mtsd_miniOS_fm \
     $(LOCAL_PATH)/proprietary/bin/pand:system/bin/pand \
     $(LOCAL_PATH)/proprietary/bin/qosmgr:system/bin/qosmgr \
+    $(LOCAL_PATH)/proprietary/bin/system_server:system/bin/system_server \
+    $(LOCAL_PATH)/proprietary/bin/tlcWrapperApp:system/bin/tlcWrapperApp \
+    $(LOCAL_PATH)/proprietary/bin/xtwifi-client:system/bin/xtwifi-client \
+    $(LOCAL_PATH)/proprietary/bin/xtwifi-inet-agent:system/bin/xtwifi-inet-agent \
+    $(LOCAL_PATH)/proprietary/etc/dbus.conf:system/etc/dbus.conf \
+    $(LOCAL_PATH)/proprietary/etc/efs.txt:system/etc/efs.txt \
+    $(LOCAL_PATH)/proprietary/etc/thermald-8930-empty.conf:system/etc/thermald-8930-empty.conf \
+    $(LOCAL_PATH)/proprietary/etc/xtra_root_cert.pem:system/etc/xtra_root_cert.pem \
+    $(LOCAL_PATH)/proprietary/etc/xtwifi.conf:system/etc/xtwifi.conf \
+    $(LOCAL_PATH)/proprietary/lib/libxt_v02.so:system/lib/libxt_v02.so \
+    $(LOCAL_PATH)/proprietary/lib/libxtwifi_ulp_adaptor.so:system/lib/libxtwifi_ulp_adaptor.so \
+    $(LOCAL_PATH)/proprietary/lib/libxtwifi_zpp_adaptor.so:system/lib/libxtwifi_zpp_adaptor.so \
+    $(LOCAL_PATH)/proprietary/lib/hw/gestures.msm8960.so:system/lib/hw/gestures.msm8960.so \
+    $(LOCAL_PATH)/proprietary/lib/libgesture-core.so:system/lib/libgesture-core.so \
+    $(LOCAL_PATH)/proprietary/lib/libgesture_client.so:system/lib/libgesture_client.so \
+    $(LOCAL_PATH)/proprietary/lib/libgestureservice.so:system/lib/libgestureservice.so \
+    $(LOCAL_PATH)/proprietary/lib/libmmgestures-linux.so:system/lib/libmmgestures-linux.so \
+    $(LOCAL_PATH)/proprietary/lib/libmmgesture_services.so:system/lib/libmmgesture_services.so \
     $(LOCAL_PATH)/proprietary/lib/libnetcmdiface.so:system/lib/libnetcmdiface.so \
-
-# APNS For LTE/MMS
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/apns-conf.xml:system/etc/apns-conf.xml
-
-
 
 
 
