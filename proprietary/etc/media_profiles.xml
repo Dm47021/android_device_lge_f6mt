@@ -499,7 +499,7 @@
     <!--
     LGE_CHAGE[fefe7270.park] Add LgeCamcorderCap
     -->
-    <LgeCamcorderCap  minfps="24000" maxfps="30000"
+    <LgeCamcorderCap  minfps="15000" maxfps="30000"
                       usehighprofile="0"  audiozoomenable="0"
                       audiozoomX="14" audiozoomY="4"
                       usehwaac="1"/>
