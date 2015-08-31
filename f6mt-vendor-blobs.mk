@@ -195,7 +195,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/proprietary/bin/mdm_helper:system/bin/mdm_helper \
     $(LOCAL_PATH)/proprietary/bin/netmgrd:system/bin/netmgrd \
     $(LOCAL_PATH)/proprietary/bin/qmuxd:system/bin/qmuxd \
-    $(LOCAL_PATH)/proprietary/bin/rild:system/bin/rild \
     $(LOCAL_PATH)/proprietary/bin/rmt_storage:system/bin/rmt_storage \
     $(LOCAL_PATH)/proprietary/bin/sec-ril:system/bin/sec-ril \
     $(LOCAL_PATH)/proprietary/lib/libcordon.so:system/lib/libcordon.so \
