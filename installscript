@@ -1,15 +1,14 @@
 show_progress(0.500000, 0);
 ui_print("::::::::::::::::::::::::::::::::");
 ui_print("::                            ::");
-ui_print("::       PACMAN               ::");
+ui_print("::     Carbon Rom  By DM47021 ::");
+ui_print("::        VER 3 05/14/20115   ::");
 ui_print("::       For LG Optimus F6    ::");
 ui_print("::          Metro PCS         ::");
 ui_print("::                            ::");
 ui_print("::                            ::");
-ui_print("::     by  HROARK13           ::");
+ui_print("::     by                      ::");
 ui_print("::         Dm47021            ::");
-ui_print("::         pressy4pie         ::");
-ui_print("::         codingninja62001   ::");
 ui_print("::                            ::");
 ui_print("::        special Thanks      ::");
 ui_print("::        to djrbliss         ::");

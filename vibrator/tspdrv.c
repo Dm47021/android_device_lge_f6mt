@@ -13,69 +13,46 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- 
+
 #include <sys/ioctl.h>
-#include <pthread.h>
 #include <unistd.h>
 #include <fcntl.h>
 #include <errno.h>
- 
+
 #define TSPDRV_MAGIC_NUMBER                 0x494D4D52
- 
+
 #define TSPDRV_STOP_KERNEL_TIMER            _IO(TSPDRV_MAGIC_NUMBER & 0xFF, 1)
 #define TSPDRV_ENABLE_AMP                   _IO(TSPDRV_MAGIC_NUMBER & 0xFF, 3)
 #define TSPDRV_DISABLE_AMP                  _IO(TSPDRV_MAGIC_NUMBER & 0xFF, 4)
- 
-static pthread_t vibstop_pt;
+#define TSPDRV_ENABLE_TIMED_AMP             _IO(TSPDRV_MAGIC_NUMBER & 0xFF, 6)
 static int tspfd = -1;
- 
+
 int vibrator_exists()
 {
     int fd;
- 
+
     fd = open("/dev/tspdrv", O_RDWR);
     if(fd < 0)
         return 0;
     close(fd);
     return 1;
 }
- 
-static void* stopvib( void * timer ) {
-    int fd;
-    int dummy = 0;
- 
-    fd = open("/dev/tspdrv",O_RDWR);
-    usleep((int)timer*1000);
-    ioctl(fd,TSPDRV_DISABLE_AMP,&dummy);
-    close(fd);
-    return 0;
-}
- 
+
 int sendit(int timeout_ms)
 {
-    int actuator = 0;
+    int fd = open("/dev/tspdrv",O_RDWR);
+    int timer = timeout_ms;
     int res = 0;
-    int s = 0;
-    char vibsample[4];
- 
-    vibsample[0] = 0; vibsample[1] = 8; vibsample[2]=1; 
-    vibsample[3] = 96;
- 
-    if (tspfd < 0)
-        tspfd = open("/dev/tspdrv",O_RDWR);
- 
-    if (timeout_ms) {
-        ioctl(tspfd,TSPDRV_DISABLE_AMP,&actuator);
-        pthread_join( vibstop_pt, NULL );
+    int actuator = 0;
+
+    if (timeout_ms <= 0) {
+        res = ioctl(fd,TSPDRV_DISABLE_AMP,NULL);
         ioctl(tspfd,TSPDRV_ENABLE_AMP,&actuator);
         ioctl(tspfd,TSPDRV_MAGIC_NUMBER,&actuator);
-        write(tspfd,&vibsample,4); // First hit triggers the sample processing
-        write(tspfd,&vibsample,4); // Now do it for real
-        pthread_create( &vibstop_pt, NULL, stopvib, (void *)timeout_ms);
     } else {
-        ioctl(tspfd,TSPDRV_DISABLE_AMP,&actuator);
-        pthread_join( vibstop_pt, NULL );
+        res = ioctl(fd,TSPDRV_ENABLE_TIMED_AMP,&timer);
     }
- 
-    return 0;
+
+    close(fd);
+    return ( res ? -1 : 0 );
 }

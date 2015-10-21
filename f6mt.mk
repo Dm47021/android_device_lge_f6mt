@@ -20,7 +20,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 # f6mt vendor blobs
 $(call inherit-product-if-exists, device/lge/f6mt/f6mt-vendor-blobs.mk)
 
-
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/base/nfc-extras/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml \
@@ -43,7 +42,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
-    frameworks/native/data/etc/android.hardware.consumerir.xml:system/etc/permissions/android.hardware.consumerir.xml \
     packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml 
 
 
@@ -69,7 +67,7 @@ PRODUCT_PACKAGES += \
     gralloc.msm8960 \
     hwcomposer.msm8960 \
     memtrack.msm8960 \
-    power.msm8960 \
+    power.f6mt \
     libgenlock \
     libmemalloc \
     liboverlay \
@@ -86,19 +84,33 @@ PRODUCT_PACKAGES += \
 
 # Audio Properties
 PRODUCT_PROPERTY_OVERRIDES += \
-	persist.audio.fluence.mode=endfire \
-        persist.audio.fluence.speaker=none \
-        persist.audio.vr.enable=false \
-        persist.audio.handset.mic=digital \
-        persist.audio.lowlatency.rec=false \
-        af.resampler.quality=255
+    persist.audio.fluence.mode=endfire \
+    persist.audio.fluence.speaker=none \
+    persist.audio.vr.enable=false \
+    persist.audio.handset.mic=analog \
+    persist.audio.lowlatency.rec=false \
+    af.resampler.quality=255
 
-# Bluetooth Properties
+# Bluetooth
+PRODUCT_PACKAGES += \
+    hcitool \
+    hciconfig \
+    hwaddrs \
+    bt_vendor.conf
+
 PRODUCT_PROPERTY_OVERRIDES += \
-        ro.bluetooth.request.master=true \
-        ro.bluetooth.remote.autoconnect=true \
-        bluetooth.chip.vendor=brcm 
+    ro.bt.bdaddr_path=/data/misc/bd_addr \
+    ro.bluetooth.request.master=true \
+    ro.bluetooth.remote.autoconnect=true \
+    bluetooth.chip.vendor=brcm 
 
+# lights
+PRODUCT_PACKAGES += \
+    lights.msm8960
+
+# Custom Shit
+PRODUCT_PACKAGES += \
+    Weatherwidget
 
 # Media
 PRODUCT_PACKAGES += \
@@ -141,6 +153,7 @@ PRODUCT_PACKAGES += \
 
 # NFC Support
 PRODUCT_PACKAGES += \
+    nfc.f6mt \
     libnfc \
     libnfc_jni \
     Nfc \
@@ -162,10 +175,6 @@ PRODUCT_PACKAGES += \
     regdbdump \
     regulatory.bin \
     linville.key.pub.pem
-
-#SWIRRC 
-PRODUCT_PACKAGES += \
-    consumerir.f6mt
 
 # Torch
 PRODUCT_PACKAGES += Torch
@@ -202,6 +211,9 @@ PRODUCT_PACKAGES += \
     make_ext4fs \
     e2fsck \
     setup_fs
+
+# Voice processing
+PRODUCT_PACKAGES += libqcomvoiceprocessing
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
@@ -280,3 +292,112 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
 
 # call dalvik heap config
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
+
+
+# Kernel Ramdisk
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/ramdisk/fstab.qcom:root/fstab.qcom \
+    $(LOCAL_PATH)/ramdisk/init.carrier.rc:root/init.carrier.rc \
+    $(LOCAL_PATH)/ramdisk/init.qcom.class_core.sh:root/init.qcom.class_core.sh \
+    $(LOCAL_PATH)/ramdisk/init.qcom.class_main.sh:root/init.qcom.class_main.sh \
+    $(LOCAL_PATH)/ramdisk/init.qcom.early_boot.sh:root/init.qcom.early_boot.sh \
+    $(LOCAL_PATH)/ramdisk/init.qcom.lpm_boot.sh:root/init.qcom.lpm_boot.sh \
+    $(LOCAL_PATH)/ramdisk/init.qcom.rc:root/init.qcom.rc \
+    $(LOCAL_PATH)/ramdisk/init.qcom.sh:root/init.qcom.sh \
+    $(LOCAL_PATH)/ramdisk/init.qcom.cmm.usb.sh:root/init.qcom.cmm.usb.sh \
+    $(LOCAL_PATH)/ramdisk/init.qcom.syspart_fixup.sh:root/init.qcom.syspart_fixup.sh \
+    $(LOCAL_PATH)/ramdisk/init.qcom.usb.rc:root/init.qcom.usb.rc \
+    $(LOCAL_PATH)/ramdisk/init.qcom.usb.sh:root/init.qcom.usb.sh \
+    $(LOCAL_PATH)/ramdisk/init.target.rc:root/init.target.rc \
+    $(LOCAL_PATH)/ramdisk/sbin/chargerlogo:root/sbin/chargerlogo \
+    $(LOCAL_PATH)/ramdisk/sbin/healthd:root/sbin/healthd \
+    $(LOCAL_PATH)/ramdisk/charger:root/charger \
+    $(LOCAL_PATH)/ramdisk/chargerlogo_res_images-timestamp:root/chargerlogo_res_images-timestamp \
+    $(LOCAL_PATH)/ramdisk/lpm.rc:root/lpm.rc \
+    $(LOCAL_PATH)/ramdisk/ueventd.qcom.rc:root/ueventd.qcom.rc \
+    $(LOCAL_PATH)/ramdisk/res/images/charger/battery_0.png:root/res/images/charger/battery_0.png \
+    $(LOCAL_PATH)/ramdisk/res/images/charger/battery_1.png:root/res/images/charger/battery_1.png \
+    $(LOCAL_PATH)/ramdisk/res/images/charger/battery_2.png:root/res/images/charger/battery_2.png \
+    $(LOCAL_PATH)/ramdisk/res/images/charger/battery_3.png:root/res/images/charger/battery_3.png \
+    $(LOCAL_PATH)/ramdisk/res/images/charger/battery_4.png:root/res/images/charger/battery_4.png \
+    $(LOCAL_PATH)/ramdisk/res/images/charger/battery_5.png:root/res/images/charger/battery_5.png \
+    $(LOCAL_PATH)/ramdisk/res/images/charger/battery_charge.png:root/res/images/charger/battery_charge.png \
+    $(LOCAL_PATH)/ramdisk/res/images/charger/battery_fail.png:root/res/images/charger/battery_fail.png \
+    $(LOCAL_PATH)/ramdisk/initlogo.rle:root/initlogo.rle \
+    $(LOCAL_PATH)/ramdisk/sbin/bootlogo.f6:root/sbin/bootlogo.f6 \
+    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00000.rle:root/bootimages/boot_logof6_00000.rle \
+    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00001.rle:root/bootimages/boot_logof6_00001.rle \
+    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00002.rle:root/bootimages/boot_logof6_00002.rle \
+    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00003.rle:root/bootimages/boot_logof6_00003.rle \
+    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00004.rle:root/bootimages/boot_logof6_00004.rle \
+    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00005.rle:root/bootimages/boot_logof6_00005.rle \
+    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00006.rle:root/bootimages/boot_logof6_00006.rle \
+    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00007.rle:root/bootimages/boot_logof6_00007.rle \
+    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00008.rle:root/bootimages/boot_logof6_00008.rle \
+    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00009.rle:root/bootimages/boot_logof6_00009.rle \
+    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00010.rle:root/bootimages/boot_logof6_00010.rle \
+    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00011.rle:root/bootimages/boot_logof6_00011.rle \
+    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00012.rle:root/bootimages/boot_logof6_00012.rle \
+    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00013.rle:root/bootimages/boot_logof6_00013.rle \
+    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00014.rle:root/bootimages/boot_logof6_00014.rle \
+    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00015.rle:root/bootimages/boot_logof6_00015.rle \
+    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00016.rle:root/bootimages/boot_logof6_00016.rle \
+    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00017.rle:root/bootimages/boot_logof6_00017.rle \
+    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00018.rle:root/bootimages/boot_logof6_00018.rle \
+    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00019.rle:root/bootimages/boot_logof6_00019.rle \
+    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00020.rle:root/bootimages/boot_logof6_00020.rle \
+    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00021.rle:root/bootimages/boot_logof6_00021.rle \
+    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00022.rle:root/bootimages/boot_logof6_00022.rle \
+    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00023.rle:root/bootimages/boot_logof6_00023.rle \
+    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00024.rle:root/bootimages/boot_logof6_00024.rle \
+    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00025.rle:root/bootimages/boot_logof6_00025.rle \
+    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00026.rle:root/bootimages/boot_logof6_00026.rle \
+    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00027.rle:root/bootimages/boot_logof6_00027.rle \
+    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00028.rle:root/bootimages/boot_logof6_00028.rle \
+    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00029.rle:root/bootimages/boot_logof6_00029.rle \
+    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00030.rle:root/bootimages/boot_logof6_00030.rle \
+    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00031.rle:root/bootimages/boot_logof6_00031.rle \
+    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00032.rle:root/bootimages/boot_logof6_00032.rle \
+    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00033.rle:root/bootimages/boot_logof6_00033.rle \
+    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00034.rle:root/bootimages/boot_logof6_00034.rle \
+    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00035.rle:root/bootimages/boot_logof6_00035.rle \
+    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00036.rle:root/bootimages/boot_logof6_00036.rle \
+    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00037.rle:root/bootimages/boot_logof6_00037.rle \
+    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00038.rle:root/bootimages/boot_logof6_00038.rle \
+    $(LOCAL_PATH)/ramdisk/bootimages/boot_logof6_00039.rle:root/bootimages/boot_logof6_00039.rle \
+    $(LOCAL_PATH)/ramdisk/bootlogo.f6_res_images-timestamp:root/bootlogo.f6_res_images-timestamp \
+    $(LOCAL_PATH)/ramdisk/sbin/rr1.sh:root/sbin/rr1.sh \
+    $(LOCAL_PATH)/ramdisk/sbin/recovery:root/sbin/recovery 
+
+# Recovery
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/recovery/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh \
+    $(LOCAL_PATH)/recovery/postrecoveryboot.sh:recovery/system/bin/postrecoveryboot.sh \
+    $(LOCAL_PATH)/recovery/root/init.recovery.qcom.rc:recovery/root/init.recovery.qcom.rc \
+    $(LOCAL_PATH)/recovery/root/init.recovery.rc:recovery/root/init.recovery.rc \
+
+# Misc Etc scripts
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/proprietary/etc/init.crda.sh:system/etc/init.crda.sh \
+    $(LOCAL_PATH)/proprietary/etc/init.qcom.audio.sh:system/etc/init.qcom.audio.sh \
+    $(LOCAL_PATH)/proprietary/etc/init.qcom.coex.sh:system/etc/init.qcom.coex.sh \
+    $(LOCAL_PATH)/proprietary/etc/init.qcom.efs.sync.sh:system/etc/init.qcom.efs.sync.sh \
+    $(LOCAL_PATH)/proprietary/etc/init.qcom.fm.sh:system/etc/init.qcom.fm.sh \
+    $(LOCAL_PATH)/proprietary/etc/init.qcom.mdm_links.sh:system/etc/init.qcom.mdm_links.sh \
+    $(LOCAL_PATH)/proprietary/etc/init.qcom.modem_links.sh:system/etc/init.qcom.modem_links.sh \
+    $(LOCAL_PATH)/proprietary/etc/init.qcom.post_boot.sh:system/etc/init.qcom.post_boot.sh \
+    $(LOCAL_PATH)/proprietary/etc/init.qcom.post_fs.sh:system/etc/init.qcom.post_fs.sh \
+    $(LOCAL_PATH)/proprietary/etc/init.qcom.sdio.sh:system/etc/init.qcom.sdio.sh \
+    $(LOCAL_PATH)/proprietary/etc/init.qcom.thermald_conf.sh:system/etc/init.qcom.thermald_conf.sh \
+    $(LOCAL_PATH)/proprietary/etc/init.qcom.wifi.sh:system/etc/init.qcom.wifi.sh \
+    $(LOCAL_PATH)/proprietary/etc/last_kmsg_backup.sh:system/etc/last_kmsg_backup.sh \
+    $(LOCAL_PATH)/proprietary/etc/logging_android.sh:system/etc/logging_android.sh \
+    $(LOCAL_PATH)/proprietary/etc/logging_android_apart.sh:system/etc/logging_android_apart.sh \
+    $(LOCAL_PATH)/proprietary/etc/logging_kernel.sh:system/etc/logging_kernel.sh \
+    $(LOCAL_PATH)/proprietary/etc/logging_kernel_apart.sh:system/etc/logging_kernel_apart.sh \
+    $(LOCAL_PATH)/proprietary/etc/logging_prepare.sh:system/etc/logging_prepare.sh \
+    $(LOCAL_PATH)/proprietary/etc/make_packet_log.sh:system/etc/make_packet_log.sh \
+    $(LOCAL_PATH)/proprietary/etc/save_kernel_log.sh:system/etc/save_kernel_log.sh \
+    $(LOCAL_PATH)/proprietary/etc/save_kernel_log_ats.sh:system/etc/save_kernel_log_ats.sh \
+    $(LOCAL_PATH)/proprietary/etc/usf_post_boot.sh:system/etc/usf_post_boot.sh \
+    $(LOCAL_PATH)/proprietary/lib/egl/libGLES_android.so:system/lib/egl/libGLES_android.so \

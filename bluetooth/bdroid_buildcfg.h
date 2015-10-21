@@ -1,5 +1,6 @@
 /*
- * Copyright 2013 The Android Open Source Project
+ * Copyright (C) 2012 The Android Open Source Project
+ * Copyright (C) 2013 The CyanogenMod Project <http://www.cyanogenmod.org>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,10 +18,7 @@
 #ifndef _BDROID_BUILDCFG_H
 #define _BDROID_BUILDCFG_H
 
-/*
- * shows MS500 as device name 
- * DM_07/20/2014_BT-LGEF6-BCM4334
- */
-#define BTM_DEF_LOCAL_NAME        "LGMS500" 
+#define BTM_DEF_LOCAL_NAME   "LG Optimus F6"
 
+#define BTA_DISABLE_DELAY 1000 /* in milliseconds */
 #endif

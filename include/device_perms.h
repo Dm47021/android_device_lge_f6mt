@@ -18,7 +18,17 @@
 #define DEVICE_PERMS_H
 
 #define PROPERTY_PERMS_APPEND \
+    { "lge.",   AID_SYSTEM,   0 }, \
+    { "lge.factoryversion",   AID_SYSTEM,   AID_SYSTEM }, \
+    { "lge.factoryversion.",   AID_SYSTEM,   AID_SYSTEM }, \
     { "persist.audio.",   AID_SYSTEM,   0 }, \
     { "persist.sys.camera.", AID_MEDIA, 0 }, \
-    { "sys.media.vdec.sw", AID_SHELL, 0 },
+    { "sys.media.vdec.sw", AID_SHELL, 0 }, \
+    { "wifi.",   AID_WIFI,   0 }, \
+    { "com.google.clientidbase",   AID_SYSTEM,   AID_SYSTEM }, \
+    { "com.google.clientidbase.",   AID_SYSTEM,   AID_SYSTEM }, \
+    { "persist.service.brcm.bt.mac",   AID_BLUETOOTH,   AID_BLUETOOTH }, \
+    { "service.brcm.bt.", AID_BLUETOOTH, 0 }, \
+    { "persist.camera.", AID_MEDIA, AID_MEDIA },
 #endif /* DEVICE_PERMS_H */
+

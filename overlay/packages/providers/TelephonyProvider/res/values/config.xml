@@ -16,10 +16,6 @@
  
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
  
-    <!-- The preferred APN to use, in the format name,mcc,mnc
-         Leave empty to choose automatically. -->
-    <string name="config_preferred_apn">fast.metropcs.com,310,260</string>
-
     <!-- Whether default apn feature is enabled. -->
     <bool name="config_enable_default_apn">true</bool>
 

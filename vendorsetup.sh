@@ -1,1 +1,1 @@
-add_lunch_combo cm_f6mt-userdebug
+add_lunch_combo carbon_f6mt-userdebug
